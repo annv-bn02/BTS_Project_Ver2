@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/nhanma/Desktop/uart/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/uart_frame.dir/lib/main.cpp.o -c /home/nhanma/Desktop/uart/lib/main.cpp",
+  "file": "/home/nhanma/Desktop/uart/lib/main.cpp"
+},
+{
+  "directory": "/home/nhanma/Desktop/uart/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/uart_frame.dir/lib/serialport.cpp.o -c /home/nhanma/Desktop/uart/lib/serialport.cpp",
+  "file": "/home/nhanma/Desktop/uart/lib/serialport.cpp"
+},
+{
+  "directory": "/home/nhanma/Desktop/uart/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/uart_frame.dir/lib/bts_get_message.cpp.o -c /home/nhanma/Desktop/uart/lib/bts_get_message.cpp",
+  "file": "/home/nhanma/Desktop/uart/lib/bts_get_message.cpp"
+},
+{
+  "directory": "/home/nhanma/Desktop/uart/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/uart_frame.dir/lib/bts_frame_message.cpp.o -c /home/nhanma/Desktop/uart/lib/bts_frame_message.cpp",
+  "file": "/home/nhanma/Desktop/uart/lib/bts_frame_message.cpp"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/uart_frame.dir/lib/main.cpp.o CMakeFiles/uart_frame.dir/lib/serialport.cpp.o CMakeFiles/uart_frame.dir/lib/bts_get_message.cpp.o CMakeFiles/uart_frame.dir/lib/bts_frame_message.cpp.o  -o uart_frame 
