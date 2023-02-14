@@ -24,8 +24,8 @@ typedef struct
 
 typedef struct
 {
-	eventSysToUart_t To_Uart;
-	eventSysToIO_t To_IO;
+	eventSysToUart_t 	To_Uart;
+	eventSysToIO_t 		To_IO;
 }eventSysTo_t;
 
 /*-----------------------------------(EVENT LIST TASK UART TO )-----------------------------------*/

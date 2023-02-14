@@ -303,8 +303,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\USER\bts_message.c</PathWithFileName>
-      <FilenameWithoutPath>bts_message.c</FilenameWithoutPath>
+      <PathWithFileName>..\USER\bts_uart3.c</PathWithFileName>
+      <FilenameWithoutPath>bts_uart3.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -315,8 +315,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\USER\bts_uart3.c</PathWithFileName>
-      <FilenameWithoutPath>bts_uart3.c</FilenameWithoutPath>
+      <PathWithFileName>..\USER\bts_frame_message.c</PathWithFileName>
+      <FilenameWithoutPath>bts_frame_message.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -327,8 +327,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\USER\bts_debug_creat.c</PathWithFileName>
-      <FilenameWithoutPath>bts_debug_creat.c</FilenameWithoutPath>
+      <PathWithFileName>..\USER\bts_get_message.c</PathWithFileName>
+      <FilenameWithoutPath>bts_get_message.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -336,7 +336,7 @@
 
   <Group>
     <GroupName>Header</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -443,8 +443,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\USER\bts_message.h</PathWithFileName>
-      <FilenameWithoutPath>bts_message.h</FilenameWithoutPath>
+      <PathWithFileName>..\USER\bts_queue_define.h</PathWithFileName>
+      <FilenameWithoutPath>bts_queue_define.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -455,8 +455,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\USER\bts_queue_define.h</PathWithFileName>
-      <FilenameWithoutPath>bts_queue_define.h</FilenameWithoutPath>
+      <PathWithFileName>..\USER\bts_uart3.h</PathWithFileName>
+      <FilenameWithoutPath>bts_uart3.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -467,8 +467,20 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\USER\bts_uart3.h</PathWithFileName>
-      <FilenameWithoutPath>bts_uart3.h</FilenameWithoutPath>
+      <PathWithFileName>..\USER\bts_frame_message.h</PathWithFileName>
+      <FilenameWithoutPath>bts_frame_message.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>2</GroupNumber>
+      <FileNumber>22</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\USER\bts_get_message.h</PathWithFileName>
+      <FilenameWithoutPath>bts_get_message.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

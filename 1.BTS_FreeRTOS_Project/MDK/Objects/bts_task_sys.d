@@ -47,6 +47,6 @@
 .\objects\bts_task_sys.o: ..\USER\bts_event_define.h
 .\objects\bts_task_sys.o: ..\USER\bts_mutex_define.h
 .\objects\bts_task_sys.o: ..\USER\bts_queue_define.h
-.\objects\bts_task_sys.o: ..\USER\bts_message.h
 .\objects\bts_task_sys.o: ..\USER\bts_convert.h
-.\objects\bts_task_sys.o: ..\USER\bts_debug_creat.h
+.\objects\bts_task_sys.o: ..\USER\bts_frame_message.h
+.\objects\bts_task_sys.o: ..\USER\bts_get_message.h

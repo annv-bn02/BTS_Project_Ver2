@@ -2,34 +2,27 @@
 
 #define UART_FSM 1
 
-fsm_state_e bts_uart_fsm_state = FSM_STATE_START_FRAME;
-uint16_t vru16_bts_uart_fsm_count = 0;
-uint16_t vru16_bts_uart_fsm_data_lenght;
-uint8_t vru8_bts_uart_fsm_flag = 0;
-uint8_t vru8_bts_uart_fsm_array_out[Array_Out_Size];
+uint8_t array_out[50];
 
-uint8_t vru8_uart3_rxbuffer[100];
-__IO uint16_t vru16_uart3_rxcount; 
-__IO uint8_t vru16_uart3_flag_rx = 0;
+uint8_t uart3_rxbuffer[100];
+__IO uint16_t uart3_rxcount; 
+__IO uint8_t uart3_flag_rx = 0;
 
-int8_t TimeOut_Wait ;
-uint8_t TimeOut_Count ;
+///* You need this if you want use printf */
+///* Struct FILE is implemented in stdio.h */
+//struct __FILE {
+//    int dummy;
+//};
+//FILE __stdout;
 
-/* You need this if you want use printf */
-/* Struct FILE is implemented in stdio.h */
-struct __FILE {
-    int dummy;
-};
-FILE __stdout;
-
-/* retarget the C library printf function to the USART */
-int fputc(int ch, FILE *f)
-{
-  /* Place your implementation of fputc here */
-  /* e.g. write a character to the USART3 and Loop until the end of transmission */
-	SmartBTS_USART3_SendChar(ch);
-	return ch;
-}
+///* retarget the C library printf function to the USART */
+//int fputc(int ch, FILE *f)
+//{
+//  /* Place your implementation of fputc here */
+//  /* e.g. write a character to the USART3 and Loop until the end of transmission */
+//	SmartBTS_USART3_SendChar(ch);
+//	return ch;
+//}
 
 void SmartBTS_USART3_Init(void)
 {
@@ -54,131 +47,70 @@ void SmartBTS_USART3_Init(void)
 	usart_enable(UART3);
 }
 
-void SmartBTS_USART3_SendChar(const uint8_t vr_datain)
+void SmartBTS_USART3_SendChar(const uint8_t datain)
 {
-	usart_data_transmit(UART3, vr_datain);
+	usart_data_transmit(UART3, datain);
 	while(RESET == usart_flag_get(UART3, USART_FLAG_TBE));
 }
 
-void SmartBTS_USART3_SendString(const char *vr_datain)
+void SmartBTS_USART3_SendString(const char *datain)
 {
-	while(*vr_datain)
+	while(*datain)
 	{
-		SmartBTS_USART3_SendChar((uint8_t)*vr_datain);
-		vr_datain++;
+		SmartBTS_USART3_SendChar((uint8_t)*datain);
+		datain++;
 	}
 }
 
-void SmartBTS_USART3_SendOneByte(const uint8_t vr_datain)
+void SmartBTS_USART3_SendOneByte(const uint8_t datain)
 {
-	usart_data_transmit(UART3, (uint8_t)vr_datain);
+	usart_data_transmit(UART3, (uint8_t)datain);
 	while(RESET == usart_flag_get(UART3, USART_FLAG_TBE));
 }
 
-void SmartBTS_USART3_SendArrayByte(const uint8_t *vr_datain, const uint16_t vr_arrsize)
+void SmartBTS_USART3_SendArrayByte(const uint8_t *datain, const uint16_t arrsize)
 {
-	uint8_t vr_countlength;
-	for(vr_countlength = 0; vr_countlength < vr_arrsize; vr_countlength++)
+	uint8_t countlength;
+	for(countlength = 0; countlength < arrsize; countlength++)
 	{
-		SmartBTS_USART3_SendOneByte(vr_datain[vr_countlength]);
-	}
-}
-
-void SmartBTS_USART3_FSM_TimeOut(void)
-{
-	if(TimeOut_Wait == 0)
-	{
-		vru16_bts_uart_fsm_count = 0;
-		bts_uart_fsm_state = FSM_STATE_START_FRAME;
+		SmartBTS_USART3_SendOneByte(datain[countlength]);
 	}
 }
 
 #if (UART_FSM == 1)
+uint8_t* SmartBTS_USART3_Get_Array_Data(void)
+{
+	return array_out;
+}
+
 void UART3_IRQHandler(void) 
 {
-	uint8_t vr_temp_data;
+	uint8_t temp_data;
 	
 	if (RESET != usart_interrupt_flag_get(UART3, USART_INT_FLAG_RBNE)) 
 	{
-		TimeOut_Count = 0;
-		TimeOut_Wait = 1;
-		vr_temp_data = usart_data_receive(UART3);
-		switch (bts_uart_fsm_state)
-		{
-		case FSM_STATE_START_FRAME:
-			vru8_bts_uart_fsm_array_out[vru16_bts_uart_fsm_count] = vr_temp_data;
-			vru16_bts_uart_fsm_count++;
-			if (vru16_bts_uart_fsm_count == FSM_STATE_CHANGE_VALUE_TYPE_MESSAGE)
-			{
-				bts_uart_fsm_state = FSM_STATE_TYPE_MESSAGE;
-			}
-			break;
-		case FSM_STATE_TYPE_MESSAGE:
-			vru8_bts_uart_fsm_array_out[vru16_bts_uart_fsm_count] = vr_temp_data;
-			vru16_bts_uart_fsm_count++;
-			if (vru16_bts_uart_fsm_count == FSM_STATE_CHANGE_VALUE_TYPE_DEVICE)
-			{
-				bts_uart_fsm_state = FSM_STATE_TYPE_DEVICE;
-			}
-			break;
-		case FSM_STATE_TYPE_DEVICE:
-			vru8_bts_uart_fsm_array_out[vru16_bts_uart_fsm_count] = vr_temp_data;
-			vru16_bts_uart_fsm_count++;
-			if (vru16_bts_uart_fsm_count == FSM_STATE_CHANGE_VALUE_LENGHT_DATA)
-			{
-				bts_uart_fsm_state = FSM_STATE_LENGHT_DATA;
-			}
-			break;
-		case FSM_STATE_LENGHT_DATA:
-			vru8_bts_uart_fsm_array_out[vru16_bts_uart_fsm_count] = vr_temp_data;
-			vru16_bts_uart_fsm_count++;
-			if (vru16_bts_uart_fsm_count == FSM_STATE_CHANGE_VALUE_END)
-			{
-				// Do c?c frame data c? chi?u d?i kh?c nhau n?n c?n d?c data lenght luu v?o bi?n lenght m?c d?ch d? nh?n c?c data k? ti?p ch?nh x?c
-				// lenght = data lenght + 8byte chua thong tin phia truoc.
-				vru16_bts_uart_fsm_data_lenght = Bts_Convert_From_Bytes_To_Uint16(vru8_bts_uart_fsm_array_out[6], vru8_bts_uart_fsm_array_out[7]) + 8;
-				if (vru16_bts_uart_fsm_data_lenght < 24)
-				{
-					bts_uart_fsm_state = FSM_STATE_END;
-				}
-				else if (vru16_bts_uart_fsm_data_lenght > 24)
-				{
-					vru16_bts_uart_fsm_count = 0;
-					bts_uart_fsm_state = FSM_STATE_START_FRAME;
-				}
-			}
-			break;
-		case FSM_STATE_END:
-			vru8_bts_uart_fsm_array_out[vru16_bts_uart_fsm_count] = vr_temp_data;
-			vru16_bts_uart_fsm_count++;
-			if (vru16_bts_uart_fsm_count == vru16_bts_uart_fsm_data_lenght)
-			{
-				vru16_bts_uart_fsm_count = 0;
-				bts_uart_fsm_state = FSM_STATE_START_FRAME;
-				vru8_bts_uart_fsm_flag = 1;
-				vru16_uart3_flag_rx = 1;
-			}
-			break;
-		}
+		temp_data = usart_data_receive(UART3);
+		BTS_Get_Message(temp_data, array_out);
 	}
 }
+
 #else
 void UART3_IRQHandler(void)
 {
-	uint8_t vr_tempchar;
+	uint8_t tempchar;
 	if(RESET != usart_interrupt_flag_get(UART3, USART_INT_FLAG_RBNE))
 	{
-		vr_tempchar = usart_data_receive(UART3);
-		if(vr_tempchar != '\n')
+		tempchar = usart_data_receive(UART3);
+		if(tempchar != '\n')
 		{	
-			vru8_uart3_rxbuffer[vru16_uart3_rxcount] = vr_tempchar;
-			vru16_uart3_rxcount++;
+			uart3_rxbuffer[uart3_rxcount] = tempchar;
+			uart3_rxcount++;
 		}
 		else
 		{
-			vru8_uart3_rxbuffer[vru16_uart3_rxcount] = 0x00;
-			vru16_uart3_flag_rx = 1;
-			vru16_uart3_rxcount = 0;
+			uart3_rxbuffer[uart3_rxcount] = 0x00;
+			uart3_flag_rx = 1;
+			uart3_rxcount = 0;
 		}
 	}
 }
