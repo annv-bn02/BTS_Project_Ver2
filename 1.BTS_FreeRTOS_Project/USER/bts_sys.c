@@ -11,7 +11,8 @@ void BTS_Sys_SendString(char *text);
 void BTS_Sys_EventInit(void)
 {
 	EventTask.Sys.To_Uart.EventGroup = xEventGroupCreate();
-	EventTask.Sys.To_Uart.EventBit_FlagHasData = (1<<0);
+	EventTask.Sys.To_Uart.EventBit_FlagHasData 			= (1<<0);
+	EventTask.Sys.To_Uart.EventBit_FlagHasDataUpdate 	= (2<<0);
 	
 	EventTask.Sys.To_IO.EventGroup = xEventGroupCreate();
 	EventTask.Sys.To_IO.EventBit_FlagHasData = (1<<0);
@@ -20,15 +21,15 @@ void BTS_Sys_EventInit(void)
 	EventTask.Uart.To_Sys.EventBit_FlagHasData = (1<<0);
 	
 	EventTask.IO.To_Sys.EventGroup = xEventGroupCreate();
-	EventTask.IO.To_Sys.EventBit_FlagHasData = (1<<0);
+	EventTask.IO.To_Sys.EventBit_FlagHasData 		= (1<<0);
+	EventTask.IO.To_Sys.EventBit_FlagHasDataUpdate 	= (2<<0);
 }
 
 void BTS_SysMutexInit(void)
 {
 	MutexTask.SYS.Lock_SendChar = xSemaphoreCreateMutex();
-	MutexTask.SYS.Lock_SendQueue = xSemaphoreCreateMutex();
-	MutexTask.IO.Lock_SendQueue = xSemaphoreCreateMutex();
-	MutexTask.UART.Lock_SendQueue = xSemaphoreCreateMutex();
+	MutexTask.IO.Lock_Queue = xSemaphoreCreateMutex();
+	MutexTask.UART.Lock_Queue = xSemaphoreCreateMutex();
 }
 
 void BTS_Sys_QueueInit(void)

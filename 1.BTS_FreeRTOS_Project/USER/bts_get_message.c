@@ -10,7 +10,7 @@ int32_t timeout_wait;
 fsmListState_e	fsm_state;
 static void ClearState(void);
 
-uint16_t Flag_New_Message(uint16_t *lenght)
+uint16_t Is_Message(uint16_t *lenght)
 {
 	if(flag_new_message == TRUE)
 	{
@@ -30,11 +30,11 @@ uint16_t Flag_New_Message(uint16_t *lenght)
  * time to receive the new message 
  * used to avoid the case where the message is long or the message is shorter than the message length
  */
-void TimeOut(void)
+void Time_Out_Get_Message(void)
 {
 	if(timeout_wait == TRUE)
 	{  
-		if(timeout_start >= 20)
+		if(timeout_start >= COUNTER_TIMEOUT)
 		{		
 			length_message = 0;
 			ClearState();

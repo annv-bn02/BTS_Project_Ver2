@@ -5,10 +5,11 @@
 #define DEBUG_CREAT_MESSAGE_UPDATE_SENSOR 0
 
 static void GetNewMessage(void);
-static void SendEvent_UartToSys(void);
 static void GetQueueDevice_IoToUart(void);
 static void GetQueueSensor_IoToUart(void);
-static void GetEvent_SysToUart(EventBits_t event);
+static void SendEventControl_UartToSys(void);
+static void GetEventUpdate_SysToUart(EventBits_t event);
+static void GetEventControl_SysToUart(EventBits_t event);
 static void SendQueue_UartToIO(const uint8_t name, const uint8_t value);
 //	Function Test
 static void CreateControlDeviceTest(const uint8_t name, const uint8_t value);
@@ -33,8 +34,8 @@ void BTS_RTOS_Task_Msg(void *p)
 	while(1)
 	{
 		GetNewMessage();
-		//If UART has event from SYS, end event progress;
-		GetEvent_SysToUart(event);
+		GetEventUpdate_SysToUart(event);
+		GetEventControl_SysToUart(event);
 		vTaskDelay(TIME_DELAY_TASK_MSG/portTICK_RATE_MS);
 	}
 }
@@ -45,7 +46,7 @@ static void GetNewMessage(void)
 	uint8_t* array_data;
 	uint8_t size_array_data = 0;
 	messageFrameMsg_t frame_message;
-	if(Flag_New_Message(&lenght) != 0)
+	if(Is_Message(&lenght) != 0)
 	{
 		if(lenght > 0)
 		{
@@ -59,18 +60,12 @@ static void GetNewMessage(void)
 				if(frame_message.TypeMessage == TYPE_MESSAGE_CONTROL_DEVICE)
 				{
 					SendQueue_UartToIO(frame_message.Data[0], frame_message.Data[1]);
-					SendEvent_UartToSys();
+					SendEventControl_UartToSys();
 				}
 			}
 		}
 	}
-	TimeOut();
-}
-
-static void SendEvent_UartToSys(void)
-{
-	xEventGroupSetBits(EventTask.Uart.To_Sys.EventGroup, EventTask.Uart.To_Sys.EventBit_FlagHasData);	
-	
+	Time_Out_Get_Message();
 }
 
 static void GetQueueDevice_IoToUart(void)
@@ -112,12 +107,32 @@ static void GetQueueSensor_IoToUart(void)
 	}
 }
 
-static void GetEvent_SysToUart(EventBits_t event)
+static void SendEventControl_UartToSys(void)
 {
+	xEventGroupSetBits(EventTask.Uart.To_Sys.EventGroup, EventTask.Uart.To_Sys.EventBit_FlagHasData);	
+	
+}
+
+static void GetEventUpdate_SysToUart(EventBits_t event)
+{
+	//If UART has event from SYS, end event progress;
+	event = xEventGroupWaitBits(EventTask.Sys.To_Uart.EventGroup, EventTask.Sys.To_Uart.EventBit_FlagHasDataUpdate, pdTRUE, pdFALSE, TIME_WAIT_EVENT_ALL);
+	if(event & EventTask.Sys.To_Uart.EventBit_FlagHasDataUpdate)
+	{
+		BTS_Sys_Debug("Update Data\n");
+		GetQueueDevice_IoToUart();
+		GetQueueSensor_IoToUart();
+		BTS_Sys_Debug("End Update\n\n");
+	}
+}
+
+static void GetEventControl_SysToUart(EventBits_t event)
+{
+	//If UART has event from SYS, end event progress;
 	event = xEventGroupWaitBits(EventTask.Sys.To_Uart.EventGroup, EventTask.Sys.To_Uart.EventBit_FlagHasData, pdTRUE, pdFALSE, TIME_WAIT_EVENT_ALL);
 	if(event & EventTask.Sys.To_Uart.EventBit_FlagHasData)
 	{
-		BTS_Sys_Debug("Event SYSTEM to UART done\n");
+		BTS_Sys_Debug("Event Control SYSTEM to UART done\n");
 		GetQueueDevice_IoToUart();
 		GetQueueSensor_IoToUart();
 		BTS_Sys_Debug("End test\n\n");
@@ -129,7 +144,9 @@ static void SendQueue_UartToIO(const uint8_t name, const uint8_t value)
 	controlDeviceFrame_t data_frame;
 	data_frame.name = name;
 	data_frame.value = value;
+	xSemaphoreTake(MutexTask.UART.Lock_Queue, portMAX_DELAY);
 	xQueueSend(QueueTask.Uart.To_Io.Queue_Device, (void *)&data_frame, TIME_WAIT_QUEUE);
+	xSemaphoreGive(MutexTask.UART.Lock_Queue);
 }
 
 static void CreateControlDeviceTest(const uint8_t name, const uint8_t value)

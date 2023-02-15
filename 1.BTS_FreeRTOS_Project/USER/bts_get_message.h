@@ -29,9 +29,9 @@ typedef enum
 
 extern int32_t timeout_wait;
 
-uint16_t Flag_New_Message(uint16_t *lenght);
+uint16_t Is_Message(uint16_t *lenght);
 void BTS_Get_Message(uint8_t datain, uint8_t arr_message[]);
-void TimeOut(void);
+void Time_Out_Get_Message(void);
 void GetMessage(void);
 void ClearState(void);
 #ifdef __cplusplus

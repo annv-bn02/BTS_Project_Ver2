@@ -1,7 +1,7 @@
 Dependencies for Project 'gpio', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (..\USER\main.c)(0x63E9BA1F)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (..\USER\bts_sys.h)(0x63EB5F9A)
+I (..\USER\bts_sys.h)(0x63EC5787)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
@@ -38,19 +38,19 @@ I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\inclu
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h)(0x6386C230)
-I (..\USER\bts_uart.h)(0x63E7A5BA)
-I (..\USER\bts_uart3.h)(0x63EB3D9C)
-I (..\USER\bts_task_io.h)(0x63EB4A50)
+I (..\USER\bts_uart.h)(0x63EB9A8F)
+I (..\USER\bts_uart3.h)(0x63EB9A8F)
+I (..\USER\bts_task_io.h)(0x63EC5351)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x63E7341C)
-I (..\USER\bts_event_define.h)(0x63EB08EE)
-I (..\USER\bts_mutex_define.h)(0x63E7341C)
-I (..\USER\bts_queue_define.h)(0x63EB5954)
+I (..\USER\bts_event_define.h)(0x63EC4ADE)
+I (..\USER\bts_mutex_define.h)(0x63EC4F84)
+I (..\USER\bts_queue_define.h)(0x63EB9A8F)
 I (..\USER\bts_convert.h)(0x63E7341C)
-I (..\USER\bts_frame_message.h)(0x63EB5F9A)
-I (..\USER\bts_get_message.h)(0x63EB3371)
-F (..\USER\bts_uart.c)(0x63E9D03C)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_uart.o --omf_browse .\objects\bts_uart.crf --depend .\objects\bts_uart.d)
-I (..\USER\bts_uart.h)(0x63E7A5BA)
+I (..\USER\bts_frame_message.h)(0x63EB9A8F)
+I (..\USER\bts_get_message.h)(0x63EC404F)
+F (..\USER\bts_uart.c)(0x63EB9A8F)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_uart.o --omf_browse .\objects\bts_uart.crf --depend .\objects\bts_uart.d)
+I (..\USER\bts_uart.h)(0x63EB9A8F)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60253184)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
@@ -68,7 +68,7 @@ I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\F
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC6985A)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC6985A)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC6985A)
-I (..\USER\bts_sys.h)(0x63EB5F9A)
+I (..\USER\bts_sys.h)(0x63EC5787)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities\gd32f30x_eval.h)(0x5BC6997E)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\FreeRTOS.h)(0x6386C230)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025318E)
@@ -88,18 +88,18 @@ I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\inclu
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h)(0x6386C230)
-I (..\USER\bts_uart3.h)(0x63EB3D9C)
-I (..\USER\bts_task_io.h)(0x63EB4A50)
+I (..\USER\bts_uart3.h)(0x63EB9A8F)
+I (..\USER\bts_task_io.h)(0x63EC5351)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x63E7341C)
-I (..\USER\bts_event_define.h)(0x63EB08EE)
-I (..\USER\bts_mutex_define.h)(0x63E7341C)
-I (..\USER\bts_queue_define.h)(0x63EB5954)
+I (..\USER\bts_event_define.h)(0x63EC4ADE)
+I (..\USER\bts_mutex_define.h)(0x63EC4F84)
+I (..\USER\bts_queue_define.h)(0x63EB9A8F)
 I (..\USER\bts_convert.h)(0x63E7341C)
-I (..\USER\bts_frame_message.h)(0x63EB5F9A)
-I (..\USER\bts_get_message.h)(0x63EB3371)
-F (..\USER\bts_sys.c)(0x63EB5FA6)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_sys.o --omf_browse .\objects\bts_sys.crf --depend .\objects\bts_sys.d)
-I (..\USER\bts_sys.h)(0x63EB5F9A)
+I (..\USER\bts_frame_message.h)(0x63EB9A8F)
+I (..\USER\bts_get_message.h)(0x63EC404F)
+F (..\USER\bts_sys.c)(0x63EC4F84)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_sys.o --omf_browse .\objects\bts_sys.crf --depend .\objects\bts_sys.d)
+I (..\USER\bts_sys.h)(0x63EC5787)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
@@ -136,21 +136,21 @@ I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\inclu
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h)(0x6386C230)
-I (..\USER\bts_uart.h)(0x63E7A5BA)
-I (..\USER\bts_uart3.h)(0x63EB3D9C)
-I (..\USER\bts_task_io.h)(0x63EB4A50)
+I (..\USER\bts_uart.h)(0x63EB9A8F)
+I (..\USER\bts_uart3.h)(0x63EB9A8F)
+I (..\USER\bts_task_io.h)(0x63EC5351)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x63E7341C)
-I (..\USER\bts_event_define.h)(0x63EB08EE)
-I (..\USER\bts_mutex_define.h)(0x63E7341C)
-I (..\USER\bts_queue_define.h)(0x63EB5954)
+I (..\USER\bts_event_define.h)(0x63EC4ADE)
+I (..\USER\bts_mutex_define.h)(0x63EC4F84)
+I (..\USER\bts_queue_define.h)(0x63EB9A8F)
 I (..\USER\bts_convert.h)(0x63E7341C)
-I (..\USER\bts_frame_message.h)(0x63EB5F9A)
-I (..\USER\bts_get_message.h)(0x63EB3371)
+I (..\USER\bts_frame_message.h)(0x63EB9A8F)
+I (..\USER\bts_get_message.h)(0x63EC404F)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x60253186)
-F (..\USER\bts_task_io.c)(0x63EB84EF)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_task_io.o --omf_browse .\objects\bts_task_io.crf --depend .\objects\bts_task_io.d)
-I (..\USER\bts_task_io.h)(0x63EB4A50)
-I (..\USER\bts_sys.h)(0x63EB5F9A)
+F (..\USER\bts_task_io.c)(0x63EC58A6)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_task_io.o --omf_browse .\objects\bts_task_io.crf --depend .\objects\bts_task_io.d)
+I (..\USER\bts_task_io.h)(0x63EC5351)
+I (..\USER\bts_sys.h)(0x63EC5787)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
@@ -187,19 +187,19 @@ I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\inclu
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h)(0x6386C230)
-I (..\USER\bts_uart.h)(0x63E7A5BA)
-I (..\USER\bts_uart3.h)(0x63EB3D9C)
+I (..\USER\bts_uart.h)(0x63EB9A8F)
+I (..\USER\bts_uart3.h)(0x63EB9A8F)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x63E7341C)
-I (..\USER\bts_event_define.h)(0x63EB08EE)
-I (..\USER\bts_mutex_define.h)(0x63E7341C)
-I (..\USER\bts_queue_define.h)(0x63EB5954)
+I (..\USER\bts_event_define.h)(0x63EC4ADE)
+I (..\USER\bts_mutex_define.h)(0x63EC4F84)
+I (..\USER\bts_queue_define.h)(0x63EB9A8F)
 I (..\USER\bts_convert.h)(0x63E7341C)
-I (..\USER\bts_frame_message.h)(0x63EB5F9A)
-I (..\USER\bts_get_message.h)(0x63EB3371)
-F (..\USER\bts_task_msg_transmission.c)(0x63EB8513)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_task_msg_transmission.o --omf_browse .\objects\bts_task_msg_transmission.crf --depend .\objects\bts_task_msg_transmission.d)
+I (..\USER\bts_frame_message.h)(0x63EB9A8F)
+I (..\USER\bts_get_message.h)(0x63EC404F)
+F (..\USER\bts_task_msg_transmission.c)(0x63EC4F83)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_task_msg_transmission.o --omf_browse .\objects\bts_task_msg_transmission.crf --depend .\objects\bts_task_msg_transmission.d)
 I (..\USER\bts_task_msg_transmission.h)(0x63E7341C)
-I (..\USER\bts_sys.h)(0x63EB5F9A)
+I (..\USER\bts_sys.h)(0x63EC5787)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
@@ -236,19 +236,19 @@ I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\inclu
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h)(0x6386C230)
-I (..\USER\bts_uart.h)(0x63E7A5BA)
-I (..\USER\bts_uart3.h)(0x63EB3D9C)
-I (..\USER\bts_task_io.h)(0x63EB4A50)
+I (..\USER\bts_uart.h)(0x63EB9A8F)
+I (..\USER\bts_uart3.h)(0x63EB9A8F)
+I (..\USER\bts_task_io.h)(0x63EC5351)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
-I (..\USER\bts_event_define.h)(0x63EB08EE)
-I (..\USER\bts_mutex_define.h)(0x63E7341C)
-I (..\USER\bts_queue_define.h)(0x63EB5954)
+I (..\USER\bts_event_define.h)(0x63EC4ADE)
+I (..\USER\bts_mutex_define.h)(0x63EC4F84)
+I (..\USER\bts_queue_define.h)(0x63EB9A8F)
 I (..\USER\bts_convert.h)(0x63E7341C)
-I (..\USER\bts_frame_message.h)(0x63EB5F9A)
-I (..\USER\bts_get_message.h)(0x63EB3371)
-F (..\USER\bts_task_sys.c)(0x63EB5EE2)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_task_sys.o --omf_browse .\objects\bts_task_sys.crf --depend .\objects\bts_task_sys.d)
+I (..\USER\bts_frame_message.h)(0x63EB9A8F)
+I (..\USER\bts_get_message.h)(0x63EC404F)
+F (..\USER\bts_task_sys.c)(0x63EC4BAF)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_task_sys.o --omf_browse .\objects\bts_task_sys.crf --depend .\objects\bts_task_sys.d)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
-I (..\USER\bts_sys.h)(0x63EB5F9A)
+I (..\USER\bts_sys.h)(0x63EC5787)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
@@ -285,22 +285,22 @@ I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\inclu
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h)(0x6386C230)
-I (..\USER\bts_uart.h)(0x63E7A5BA)
-I (..\USER\bts_uart3.h)(0x63EB3D9C)
-I (..\USER\bts_task_io.h)(0x63EB4A50)
+I (..\USER\bts_uart.h)(0x63EB9A8F)
+I (..\USER\bts_uart3.h)(0x63EB9A8F)
+I (..\USER\bts_task_io.h)(0x63EC5351)
 I (..\USER\bts_task_msg_transmission.h)(0x63E7341C)
-I (..\USER\bts_event_define.h)(0x63EB08EE)
-I (..\USER\bts_mutex_define.h)(0x63E7341C)
-I (..\USER\bts_queue_define.h)(0x63EB5954)
+I (..\USER\bts_event_define.h)(0x63EC4ADE)
+I (..\USER\bts_mutex_define.h)(0x63EC4F84)
+I (..\USER\bts_queue_define.h)(0x63EB9A8F)
 I (..\USER\bts_convert.h)(0x63E7341C)
-I (..\USER\bts_frame_message.h)(0x63EB5F9A)
-I (..\USER\bts_get_message.h)(0x63EB3371)
+I (..\USER\bts_frame_message.h)(0x63EB9A8F)
+I (..\USER\bts_get_message.h)(0x63EC404F)
 F (..\USER\bts_convert.c)(0x63E7341C)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_convert.o --omf_browse .\objects\bts_convert.crf --depend .\objects\bts_convert.d)
 I (..\USER\bts_convert.h)(0x63E7341C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60253184)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
-F (..\USER\bts_uart3.c)(0x63EB3DA3)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_uart3.o --omf_browse .\objects\bts_uart3.crf --depend .\objects\bts_uart3.d)
-I (..\USER\bts_uart3.h)(0x63EB3D9C)
+F (..\USER\bts_uart3.c)(0x63EB9A8F)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_uart3.o --omf_browse .\objects\bts_uart3.crf --depend .\objects\bts_uart3.d)
+I (..\USER\bts_uart3.h)(0x63EB9A8F)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60253184)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
@@ -318,7 +318,7 @@ I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\F
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC6985A)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC6985A)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC6985A)
-I (..\USER\bts_sys.h)(0x63EB5F9A)
+I (..\USER\bts_sys.h)(0x63EC5787)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities\gd32f30x_eval.h)(0x5BC6997E)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\FreeRTOS.h)(0x6386C230)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025318E)
@@ -338,71 +338,22 @@ I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\inclu
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h)(0x6386C230)
-I (..\USER\bts_uart.h)(0x63E7A5BA)
-I (..\USER\bts_task_io.h)(0x63EB4A50)
+I (..\USER\bts_uart.h)(0x63EB9A8F)
+I (..\USER\bts_task_io.h)(0x63EC5351)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x63E7341C)
-I (..\USER\bts_event_define.h)(0x63EB08EE)
-I (..\USER\bts_mutex_define.h)(0x63E7341C)
-I (..\USER\bts_queue_define.h)(0x63EB5954)
+I (..\USER\bts_event_define.h)(0x63EC4ADE)
+I (..\USER\bts_mutex_define.h)(0x63EC4F84)
+I (..\USER\bts_queue_define.h)(0x63EB9A8F)
 I (..\USER\bts_convert.h)(0x63E7341C)
-I (..\USER\bts_frame_message.h)(0x63EB5F9A)
-I (..\USER\bts_get_message.h)(0x63EB3371)
-F (..\USER\bts_frame_message.c)(0x63EB84EF)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_frame_message.o --omf_browse .\objects\bts_frame_message.crf --depend .\objects\bts_frame_message.d)
-I (..\USER\bts_frame_message.h)(0x63EB5F9A)
+I (..\USER\bts_frame_message.h)(0x63EB9A8F)
+I (..\USER\bts_get_message.h)(0x63EC404F)
+F (..\USER\bts_frame_message.c)(0x63EB9A8F)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_frame_message.o --omf_browse .\objects\bts_frame_message.crf --depend .\objects\bts_frame_message.d)
+I (..\USER\bts_frame_message.h)(0x63EB9A8F)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
-I (..\USER\bts_sys.h)(0x63EB5F9A)
+I (..\USER\bts_sys.h)(0x63EC5787)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F58EE)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\system_gd32f30x.h)(0x5BC6985A)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template\gd32f30x_libopt.h)(0x58B798F0)
-I (.\RTE\_Target_1\RTE_Components.h)(0x63E751C3)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_exti.h)(0x5BC6985A)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC6985A)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC6985A)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC6985A)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC6985A)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC6985A)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities\gd32f30x_eval.h)(0x5BC6997E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60253184)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\FreeRTOS.h)(0x6386C230)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025318E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x63E7341C)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6386C230)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025318E)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\projdefs.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\portable.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\deprecated_definitions.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F\portmacro.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\mpu_wrappers.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\task.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\list.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\queue.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\timers.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\semphr.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h)(0x6386C230)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h)(0x6386C230)
-I (..\USER\bts_uart.h)(0x63E7A5BA)
-I (..\USER\bts_uart3.h)(0x63EB3D9C)
-I (..\USER\bts_task_io.h)(0x63EB4A50)
-I (..\USER\bts_task_sys.h)(0x63E7341C)
-I (..\USER\bts_task_msg_transmission.h)(0x63E7341C)
-I (..\USER\bts_event_define.h)(0x63EB08EE)
-I (..\USER\bts_mutex_define.h)(0x63E7341C)
-I (..\USER\bts_queue_define.h)(0x63EB5954)
-I (..\USER\bts_convert.h)(0x63E7341C)
-I (..\USER\bts_get_message.h)(0x63EB3371)
-F (..\USER\bts_get_message.c)(0x63EB3FDE)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_get_message.o --omf_browse .\objects\bts_get_message.crf --depend .\objects\bts_get_message.d)
-I (..\USER\bts_get_message.h)(0x63EB3371)
-I (..\USER\bts_sys.h)(0x63EB5F9A)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
-I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F58EE)
@@ -436,28 +387,77 @@ I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\inclu
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h)(0x6386C230)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h)(0x6386C230)
-I (..\USER\bts_uart.h)(0x63E7A5BA)
-I (..\USER\bts_uart3.h)(0x63EB3D9C)
-I (..\USER\bts_task_io.h)(0x63EB4A50)
+I (..\USER\bts_uart.h)(0x63EB9A8F)
+I (..\USER\bts_uart3.h)(0x63EB9A8F)
+I (..\USER\bts_task_io.h)(0x63EC5351)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x63E7341C)
-I (..\USER\bts_event_define.h)(0x63EB08EE)
-I (..\USER\bts_mutex_define.h)(0x63E7341C)
-I (..\USER\bts_queue_define.h)(0x63EB5954)
+I (..\USER\bts_event_define.h)(0x63EC4ADE)
+I (..\USER\bts_mutex_define.h)(0x63EC4F84)
+I (..\USER\bts_queue_define.h)(0x63EB9A8F)
 I (..\USER\bts_convert.h)(0x63E7341C)
-I (..\USER\bts_frame_message.h)(0x63EB5F9A)
+I (..\USER\bts_get_message.h)(0x63EC404F)
+F (..\USER\bts_get_message.c)(0x63EC5752)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_get_message.o --omf_browse .\objects\bts_get_message.crf --depend .\objects\bts_get_message.d)
+I (..\USER\bts_get_message.h)(0x63EC404F)
+I (..\USER\bts_sys.h)(0x63EC5787)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F58EE)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\system_gd32f30x.h)(0x5BC6985A)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template\gd32f30x_libopt.h)(0x58B798F0)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63E751C3)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_exti.h)(0x5BC6985A)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC6985A)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC6985A)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC6985A)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC6985A)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC6985A)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities\gd32f30x_eval.h)(0x5BC6997E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60253184)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\FreeRTOS.h)(0x6386C230)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025318E)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x63E7341C)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6386C230)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025318E)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\projdefs.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\portable.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\deprecated_definitions.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F\portmacro.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\mpu_wrappers.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\task.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\list.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\queue.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\timers.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\semphr.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h)(0x6386C230)
+I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h)(0x6386C230)
+I (..\USER\bts_uart.h)(0x63EB9A8F)
+I (..\USER\bts_uart3.h)(0x63EB9A8F)
+I (..\USER\bts_task_io.h)(0x63EC5351)
+I (..\USER\bts_task_sys.h)(0x63E7341C)
+I (..\USER\bts_task_msg_transmission.h)(0x63E7341C)
+I (..\USER\bts_event_define.h)(0x63EC4ADE)
+I (..\USER\bts_mutex_define.h)(0x63EC4F84)
+I (..\USER\bts_queue_define.h)(0x63EB9A8F)
+I (..\USER\bts_convert.h)(0x63E7341C)
+I (..\USER\bts_frame_message.h)(0x63EB9A8F)
 F (..\USER\bts_task_sys.h)(0x63E7341C)()
 F (..\USER\bts_task_msg_transmission.h)(0x63E7341C)()
-F (..\USER\bts_task_io.h)(0x63EB4A50)()
-F (..\USER\bts_sys.h)(0x63EB5F9A)()
-F (..\USER\bts_mutex_define.h)(0x63E7341C)()
-F (..\USER\bts_event_define.h)(0x63EB08EE)()
-F (..\USER\bts_uart.h)(0x63E7A5BA)()
+F (..\USER\bts_task_io.h)(0x63EC5351)()
+F (..\USER\bts_sys.h)(0x63EC5787)()
+F (..\USER\bts_mutex_define.h)(0x63EC4F84)()
+F (..\USER\bts_event_define.h)(0x63EC4ADE)()
+F (..\USER\bts_uart.h)(0x63EB9A8F)()
 F (..\USER\bts_convert.h)(0x63E7341C)()
-F (..\USER\bts_queue_define.h)(0x63EB5954)()
-F (..\USER\bts_uart3.h)(0x63EB3D9C)()
-F (..\USER\bts_frame_message.h)(0x63EB5F9A)()
-F (..\USER\bts_get_message.h)(0x63EB3371)()
+F (..\USER\bts_queue_define.h)(0x63EB9A8F)()
+F (..\USER\bts_uart3.h)(0x63EB9A8F)()
+F (..\USER\bts_frame_message.h)(0x63EB9A8F)()
+F (..\USER\bts_get_message.h)(0x63EC404F)()
 F (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Source\ARM\clib_arm.c)(0x6386C230)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\clib_arm.o --omf_browse .\objects\clib_arm.crf --depend .\objects\clib_arm.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025318E)
