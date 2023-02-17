@@ -5,6 +5,13 @@ uint8_t array_size_data_sensor[SIZE_LIST_SENSOR] = {4, 4, 1, 1, 1, 1};
 
 uint16_t CheckSum(uint8_t *buf, uint8_t len);
 
+/**
+ * @brief : Create sensor update frame array data from array of sensor data
+ * 
+ * @param datain : array of sensor data
+ * @param dataout : sensor frame array data 
+ * @return int16_t : size of the sensor update frame array data
+ */
 int16_t BTS_Frame_Creat_Sensor(float *datain, uint8_t *dataout)
 {
 	uint16_t i;
@@ -43,6 +50,13 @@ int16_t BTS_Frame_Creat_Sensor(float *datain, uint8_t *dataout)
     return count_arr;
 }
 
+/**
+ * @brief : Create device update frame array data from array of device data
+ * 
+ * @param datain : Array of device data
+ * @param dataout : Device frame array data
+ * @return int16_t : Size of device update frame array data
+ */
 int16_t BTS_Frame_Creat_Device(uint8_t *datain, uint8_t *dataout)
 {
 	uint16_t count_arr = 0;
@@ -74,6 +88,14 @@ int16_t BTS_Frame_Creat_Device(uint8_t *datain, uint8_t *dataout)
     return count_arr;
 }
 
+/**
+ * @brief : Creat device control frame array from name and status value of device
+ * 
+ * @param name : Name of device
+ * @param value : Status value of device
+ * @param dataout : Device control frame array 
+ * @return int16_t : Size of device control frame array
+ */
 int16_t BTS_Frame_Control_Device(uint8_t name, uint8_t value, uint8_t *dataout)
 {
 	uint16_t count_arr = 0;
@@ -104,6 +126,13 @@ int16_t BTS_Frame_Control_Device(uint8_t name, uint8_t value, uint8_t *dataout)
     return count_arr;
 }
 
+/**
+ * @brief : Detect of array data received from serial port in to the frame struct data of message
+ * 
+ * @param datain : Array data received 
+ * @param dataout : Frame struct data of message received
+ * @return int16_t : Return -1 is error, otherwise return size data is success detect
+ */
 int16_t DetectMessage(uint8_t *datain, messageFrameMsg_t *dataout)
 {
     uint8_t count_temp = 0, count_array_data = 0;
@@ -170,7 +199,12 @@ int16_t DetectMessage(uint8_t *datain, messageFrameMsg_t *dataout)
     return count_temp;
 }
 
-
+/**
+ * @brief : Debug the data received from serial port
+ * 
+ * @param datain : Data received from serial port
+ * @return int16_t : Return 0 if seccess
+ */
 int16_t DebugMessage(uint8_t *datain)
 {
     messageFrameMsg_t dataout;
@@ -211,6 +245,13 @@ int16_t DebugMessage(uint8_t *datain)
 	return 0;
 }
 
+/**
+ * @brief : Creat the checksum of the message
+ * 
+ * @param buf : Data of message
+ * @param len : Length of message
+ * @return uint16_t : Checksum of message
+ */
 uint16_t CheckSum(uint8_t *buf, uint8_t len)
 {
 	uint16_t crc = 0xFFFF, pos = 0, i = 0;

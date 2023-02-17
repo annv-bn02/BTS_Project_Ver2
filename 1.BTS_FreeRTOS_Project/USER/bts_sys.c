@@ -8,6 +8,10 @@ volatile queueListValue_t QueueTask;
 void BTS_Sys_SendChar(char data);
 void BTS_Sys_SendString(char *text);
 
+/**
+ * @brief Config for event of system.
+ * 
+ */
 void BTS_Sys_EventInit(void)
 {
 	EventTask.Sys.To_Uart.EventGroup = xEventGroupCreate();
@@ -25,6 +29,10 @@ void BTS_Sys_EventInit(void)
 	EventTask.IO.To_Sys.EventBit_FlagHasDataUpdate 	= (2<<0);
 }
 
+/**
+ * @brief Config for mutex of system.
+ * 
+ */
 void BTS_SysMutexInit(void)
 {
 	MutexTask.SYS.Lock_SendChar = xSemaphoreCreateMutex();
@@ -32,6 +40,10 @@ void BTS_SysMutexInit(void)
 	MutexTask.UART.Lock_Queue = xSemaphoreCreateMutex();
 }
 
+/**
+ * @brief Config for queue of system.
+ * 
+ */
 void BTS_Sys_QueueInit(void)
 {
 
@@ -44,6 +56,10 @@ void BTS_Sys_QueueInit(void)
 //	QueueTask.IO.To_Sys.Queue_Device = xQueueCreate(10, sizeof(uint8_t));
 }
 
+/**
+ * @brief Config for utilities of system.
+ * 
+ */
 void BTS_Sys_Init(void)
 {
 	BTS_SysMutexInit();

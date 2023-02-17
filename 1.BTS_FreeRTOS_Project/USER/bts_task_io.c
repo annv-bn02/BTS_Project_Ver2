@@ -1,6 +1,6 @@
 #include "bts_task_io.h"
 
-#define TEST_UPDATE 0
+#define TEST_UPDATE 1
 
 static void GetQueue_UartToIo(void);
 static void SendEventUpdate_SysToIo(void);
@@ -33,11 +33,25 @@ static void GetQueue_UartToIo(void)
 		BTS_Sys_Debug("Name : %d - Value : %d\n",data_frame.name, data_frame.value);
 		if(data_frame.value != 0)
 		{
-			BTS_Device_Control(data_frame.name - 1, 1);
+			if(BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].on))
+			{
+				BTS_Sys_Debug("Control success");
+			}
+			else
+			{
+				BTS_Sys_Debug("Control error");
+			}
 		}
 		else
 		{
-			BTS_Device_Control(data_frame.name - 1, 0);
+			if(BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].off))
+			{
+				BTS_Sys_Debug("Control success");
+			}
+			else
+			{
+				BTS_Sys_Debug("Control error");
+			}
 		}
 	}
 }

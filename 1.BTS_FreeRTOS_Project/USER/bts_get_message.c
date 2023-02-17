@@ -10,6 +10,12 @@ int32_t timeout_wait;
 fsmListState_e	fsm_state;
 static void ClearState(void);
 
+/**
+ * @brief : Flag of the new message
+ * 
+ * @param lenght : Length of the new message
+ * @return uint16_t : Return 1 if received successfully message, else return 0
+ */
 uint16_t Is_Message(uint16_t *lenght)
 {
 	if(flag_new_message == TRUE)
@@ -48,10 +54,9 @@ void Time_Out_Get_Message(void)
 }
 
 /**
- * @brief Get the Message:: Get Messages object
- * used to get standard message from the message buffer to receive
- * @param datain - one byte data receive
- * @param arr_message - array data out of message
+ * @brief Get the message from message buffer received from serial port
+ * @param datain : One byte data receive
+ * @param arr_message : Array data out of message
  */
 void BTS_Get_Message(uint8_t datain, uint8_t arr_message[])
 {
@@ -100,6 +105,10 @@ void BTS_Get_Message(uint8_t datain, uint8_t arr_message[])
 	}
 }
 
+/**
+ * @brief Used to reset element's when get message successfully or timeout.
+ * 
+ */
 void ClearState(void)
 {
 	count_element_arr = 0;
