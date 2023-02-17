@@ -48,24 +48,7 @@ typedef struct
 	float data[DEFAULT_MAX_NUMBER_SENSOR];
 }updateSensorFrame_t;
 
-#define SIZE_LIST_SENSOR 6
-typedef enum 
-{
-    SENSOR_NTC1 				 = 0,
-    SENSOR_NTC2 				    ,
-    SENSOR_DOOR 				    ,
-    SENSOR_SMOKE 				    ,
-    SENSOR_WATER 				    ,
-    SENSOR_CONDITIONER_STATUS 	    ,
-}listSensor_e;
 
-#define SIZE_LIST_DEVICE 3
-typedef enum 
-{
-    DEVICE_CONDITIONER 		        = 0x01,
-    DEVICE_FAN 				        = 0x02,
-    DEVICE_LAMP 				    = 0x03,
-}listDevice_e;
 
 
 typedef enum

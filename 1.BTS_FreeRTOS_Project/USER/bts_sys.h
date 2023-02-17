@@ -34,6 +34,16 @@ extern "C"{
 #include "bts_convert.h"
 #include "bts_frame_message.h"
 #include "bts_get_message.h"
+#include "bts_config_gpio.h"
+
+#include "bts_automatic_control.h"
+#include "bts_device.h"
+
+#include "bts_sensor_airconditioner.h"
+#include "bts_sensor_smoke.h"
+#include "bts_sensor_door.h"
+#include "bts_sensor_ntc.h"
+#include "bts_sensor_water.h"
 
 extern volatile eventListValue_t EventTask;
 extern volatile mutexListValue_t MutexTask;
@@ -50,7 +60,7 @@ extern volatile queueListValue_t QueueTask;
 	TIME_DELAY_TASK_IO = TIME_DELAY_TASK_SYS + TIME_WAIT_EVENT_ALL(1 get event) = 1 + 5*1 = 6
 	TIME_UPDATE_DATA = (COUNTER_UPDATE_DATA * TIME_DELAY_TASK_IO) = (2000 * 6) = 12000 mS 
 */
-#define COUNTER_UPDATE_DATA 		2000 	
+#define COUNTER_UPDATE_DATA 		1000 	
 
 /*
 				TimeOut Get Message

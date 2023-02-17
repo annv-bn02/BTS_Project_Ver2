@@ -20,7 +20,7 @@ void BTS_RTOS_Task_Msg(void *p)
 {
 	EventBits_t event;
 #if DEBUG_CRATE_CONTROL_DEVICE
-	CreateControlDeviceTest(1,255); 
+	CreateControlDeviceTest(3,255); 
 #endif
 	
 #if DEBUG_CREAT_MESSAGE_UPDATE_DEVICE

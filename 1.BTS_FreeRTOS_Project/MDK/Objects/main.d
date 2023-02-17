@@ -49,3 +49,11 @@
 .\objects\main.o: ..\USER\bts_convert.h
 .\objects\main.o: ..\USER\bts_frame_message.h
 .\objects\main.o: ..\USER\bts_get_message.h
+.\objects\main.o: ..\USER\bts_config_gpio.h
+.\objects\main.o: ..\USER\bts_automatic_control.h
+.\objects\main.o: ..\USER\bts_device.h
+.\objects\main.o: ..\USER\bts_sensor_airconditioner.h
+.\objects\main.o: ..\USER\bts_sensor_smoke.h
+.\objects\main.o: ..\USER\bts_sensor_door.h
+.\objects\main.o: ..\USER\bts_sensor_ntc.h
+.\objects\main.o: ..\USER\bts_sensor_water.h

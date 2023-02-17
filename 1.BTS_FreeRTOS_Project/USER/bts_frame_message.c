@@ -20,7 +20,7 @@ int16_t BTS_Frame_Creat_Sensor(float *datain, uint8_t *dataout)
 	for(i = 0; i < DEFAULT_MAX_NUMBER_SENSOR; i++)
     {
         data_format_float_bytes input_convert;
-        input_convert.data_float = 20.5 + i;
+        input_convert.data_float = datain[i];
         frame_message_temp.Data[count_arr]   = input_convert.bytes[3];
         frame_message_temp.Data[count_arr+1] = input_convert.bytes[2];
         frame_message_temp.Data[count_arr+2] = input_convert.bytes[1];
@@ -56,7 +56,7 @@ int16_t BTS_Frame_Creat_Device(uint8_t *datain, uint8_t *dataout)
 	/*---------------------------------(Data)---------------------------------*/
 	for(count_arr = 0; count_arr < DEFAULT_MAX_NUMBER_DEVICE; count_arr++)
     {
-		frame_message_temp.Data[count_arr] = count_arr;
+		frame_message_temp.Data[count_arr] = datain[count_arr];
     }
 	/*---------------------------------(Data)---------------------------------*/
 	frame_message_temp.Length =  DEFAULT_MAX_NUMBER_DEVICE + DEFAULT_BYTE_CHECKSUM;

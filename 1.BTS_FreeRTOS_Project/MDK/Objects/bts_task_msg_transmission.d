@@ -50,3 +50,11 @@
 .\objects\bts_task_msg_transmission.o: ..\USER\bts_convert.h
 .\objects\bts_task_msg_transmission.o: ..\USER\bts_frame_message.h
 .\objects\bts_task_msg_transmission.o: ..\USER\bts_get_message.h
+.\objects\bts_task_msg_transmission.o: ..\USER\bts_config_gpio.h
+.\objects\bts_task_msg_transmission.o: ..\USER\bts_automatic_control.h
+.\objects\bts_task_msg_transmission.o: ..\USER\bts_device.h
+.\objects\bts_task_msg_transmission.o: ..\USER\bts_sensor_airconditioner.h
+.\objects\bts_task_msg_transmission.o: ..\USER\bts_sensor_smoke.h
+.\objects\bts_task_msg_transmission.o: ..\USER\bts_sensor_door.h
+.\objects\bts_task_msg_transmission.o: ..\USER\bts_sensor_ntc.h
+.\objects\bts_task_msg_transmission.o: ..\USER\bts_sensor_water.h

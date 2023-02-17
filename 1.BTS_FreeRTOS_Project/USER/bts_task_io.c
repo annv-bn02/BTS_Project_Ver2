@@ -1,5 +1,7 @@
 #include "bts_task_io.h"
 
+#define TEST_UPDATE 0
+
 static void GetQueue_UartToIo(void);
 static void SendEventUpdate_SysToIo(void);
 static void SendEventControl_SysToIo(void);
@@ -11,10 +13,13 @@ void BTS_RTOS_Task_IO(void *p)
 {
 	EventBits_t event;
 	uint16_t counter_send = 0;
+	BTS_Device_Init();
 	while(1)
 	{	
+#if (TEST_UPDATE == 1)
 		counter_send++;
 		Counter_Send_Data(&counter_send);
+#endif
 		GetEventControl_SysToIo(event);
 		vTaskDelay(TIME_DELAY_TASK_IO);
 	}
@@ -26,6 +31,14 @@ static void GetQueue_UartToIo(void)
 	if(xQueueReceive(QueueTask.Uart.To_Io.Queue_Device, (void *)&data_frame, TIME_WAIT_QUEUE))
 	{
 		BTS_Sys_Debug("Name : %d - Value : %d\n",data_frame.name, data_frame.value);
+		if(data_frame.value != 0)
+		{
+			BTS_Device_Control(data_frame.name - 1, 1);
+		}
+		else
+		{
+			BTS_Device_Control(data_frame.name - 1, 0);
+		}
 	}
 }
 
@@ -69,7 +82,7 @@ static void SendQueueSensor_IoToUart(void)
 	updateSensorFrame_t frame_update_sensor;
 	for(count = 0; count < DEFAULT_MAX_NUMBER_SENSOR; count++)
 	{
-		array_data_sensor[count] = 20.5 + count;
+		array_data_sensor[count] = 25.5 + count;
 	}
 	
 	for(count = 0; count < DEFAULT_MAX_NUMBER_SENSOR; count++)
