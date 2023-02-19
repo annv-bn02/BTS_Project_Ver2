@@ -1,8 +1,8 @@
 #include "bts_task_msg_transmission.h"
 
-#define DEBUG_CRATE_CONTROL_DEVICE 0
-#define DEBUG_CREAT_MESSAGE_UPDATE_DEVICE 0
-#define DEBUG_CREAT_MESSAGE_UPDATE_SENSOR 0
+#define DEBUG_CREATE_CONTROL_DEVICE 0
+#define DEBUG_CREATE_MESSAGE_UPDATE_DEVICE 0
+#define DEBUG_CREATE_MESSAGE_UPDATE_SENSOR 0
 
 static void GetNewMessage(void);
 static void GetQueueDevice_IoToUart(void);
@@ -19,15 +19,15 @@ static void CreateMessageUpdateSensorTest(void);
 void BTS_RTOS_Task_Msg(void *p)
 {
 	EventBits_t event;
-#if DEBUG_CRATE_CONTROL_DEVICE
-	CreateControlDeviceTest(3,255); 
+#if DEBUG_CREATE_CONTROL_DEVICE
+	CreateControlDeviceTest(2,255); 
 #endif
 	
-#if DEBUG_CREAT_MESSAGE_UPDATE_DEVICE
+#if DEBUG_CREATE_MESSAGE_UPDATE_DEVICE
 	CreateMessageUpdateDeviceTest(); 
 #endif
 	
-#if DEBUG_CREAT_MESSAGE_UPDATE_SENSOR
+#if DEBUG_CREATE_MESSAGE_UPDATE_SENSOR
 	CreateMessageUpdateSensorTest(); 
 #endif
 	

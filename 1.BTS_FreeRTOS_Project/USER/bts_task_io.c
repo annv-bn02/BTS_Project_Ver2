@@ -9,13 +9,21 @@ static void SendQueueDevice_IoToUart(void);
 static void SendQueueSensor_IoToUart(void);
 static void Counter_Send_Data(uint16_t *counter);
 static void GetEventControl_SysToIo(EventBits_t event);
+
 void BTS_RTOS_Task_IO(void *p)
 {
 	EventBits_t event;
 	uint16_t counter_send = 0;
+
 	BTS_Device_Init();
+	Sensor_Smoke_Init();
 	while(1)
 	{	
+		if(Sensor_Smoke_Get() == 1)
+		{
+			BTS_Sys_Debug("\nSmoke Warning\n");
+		}
+		
 #if (TEST_UPDATE == 1)
 		counter_send++;
 		Counter_Send_Data(&counter_send);
