@@ -16,6 +16,8 @@ static void CreateControlDeviceTest(const uint8_t name, const uint8_t value);
 static void CreateMessageUpdateDeviceTest(void);
 static void CreateMessageUpdateSensorTest(void);
 
+uint32_t counter_update = 0;
+
 void BTS_RTOS_Task_Msg(void *p)
 {
 	EventBits_t event;
@@ -123,6 +125,8 @@ static void GetEventUpdate_SysToUart(EventBits_t event)
 		GetQueueDevice_IoToUart();
 		GetQueueSensor_IoToUart();
 		BTS_Sys_Debug("End Update\n\n");
+		counter_update++;
+		BTS_Sys_Debug("\nCounter Update Message: %d\n", counter_update);
 	}
 }
 

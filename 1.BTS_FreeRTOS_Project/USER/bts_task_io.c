@@ -1,7 +1,7 @@
 #include "bts_task_io.h"
 
-#define TEST_UPDATE 0
-
+#define TEST_UPDATE 1
+#define TEST_NTC 1
 static void GetQueue_UartToIo(void);
 static void SendEventUpdate_SysToIo(void);
 static void SendEventControl_SysToIo(void);
@@ -25,13 +25,14 @@ void BTS_RTOS_Task_IO(void *p)
 		{
 			BTS_Sys_Debug("\nSmoke Warning\n");
 		}
-		if(counter_get_NTC == 300)
+#if TEST_NTC 
+		if(counter_get_NTC == 200)
 		{
 			counter_get_NTC = 0;
 			Sensor_NTC_Get();
 		}
-		
-#if (TEST_UPDATE == 1)
+#endif
+#if TEST_UPDATE
 		counter_send++;
 		Counter_Send_Data(&counter_send);
 #endif
@@ -92,7 +93,7 @@ static void SendQueueDevice_IoToUart(void)
 	updateDeviceFrame_t frame_update_device;
 	for(count = 0; count < DEFAULT_MAX_NUMBER_DEVICE; count++)
 	{
-		array_data_device[count] = count;
+		array_data_device[count] = count + 10;
 	}
 	
 	for(count = 0; count < DEFAULT_MAX_NUMBER_DEVICE; count++)
