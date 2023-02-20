@@ -33,7 +33,7 @@ void BTS_Sys_EventInit(void)
  * @brief Config for mutex of system.
  * 
  */
-void BTS_SysMutexInit(void)
+void BTS_Sys_MutexInit(void)
 {
 	MutexTask.SYS.Lock_SendChar = xSemaphoreCreateMutex();
 	MutexTask.IO.Lock_Queue = xSemaphoreCreateMutex();
@@ -62,7 +62,7 @@ void BTS_Sys_QueueInit(void)
  */
 void BTS_Sys_Init(void)
 {
-	BTS_SysMutexInit();
+	BTS_Sys_MutexInit();
 	BTS_Sys_EventInit();
 	BTS_Sys_QueueInit();
 }

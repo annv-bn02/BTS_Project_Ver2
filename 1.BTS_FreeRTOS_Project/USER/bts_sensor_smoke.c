@@ -12,9 +12,9 @@ uint8_t Sensor_Smoke_Get(void)
 	if(gpio_input_bit_get(gpio_pin_sensor[SENSOR_SMOKE].port, gpio_pin_sensor[SENSOR_SMOKE].pin) == 0)
 	{
 		count_smoke_stt++;
-		if(count_smoke_stt > 2)
+		if(count_smoke_stt >= COUNTER_SMOKE_WARNING)
 		{
-			count_smoke_stt = 3;
+			count_smoke_stt = COUNTER_SMOKE_WARNING;
 			smoke_flag_new = 1;
 		}
 	}

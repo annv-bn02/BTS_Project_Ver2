@@ -8,6 +8,7 @@ extern "C"{
 #include "gd32f30x.h"
 #include "gd32f30x_gpio.h"
 #include "gd32f30x_eval.h"
+#include "gd32f30x_adc.h"
 
 #include <stdio.h>
 #include "FreeRTOS.h"
@@ -18,19 +19,20 @@ extern "C"{
 #include "croutine.h"
 #include "event_groups.h"
 #include "stream_buffer.h"
-
 #include "string.h"
+#include "math.h"
 
 #include "bts_uart.h"
 #include "bts_uart3.h"
 #include "bts_task_io.h"
 #include "bts_task_sys.h"
 #include "bts_task_msg_transmission.h"
+#include "bts_adc.h"
 
 #include "bts_event_define.h"
 #include "bts_mutex_define.h"
-
 #include "bts_queue_define.h"
+
 #include "bts_convert.h"
 #include "bts_frame_message.h"
 #include "bts_get_message.h"
@@ -63,6 +65,13 @@ extern volatile queueListValue_t QueueTask;
 #define COUNTER_UPDATE_DATA 		2000 	
 
 /*
+				Time update data
+	TIME_DELAY_TASK_IO = TIME_DELAY_TASK_SYS + TIME_WAIT_EVENT_ALL(1 get event) = 1 + 9*1 = 10
+	TIME_SMOKE_WARNING = (COUNTER_SMOKE_WARNING * TIME_DELAY_TASK_IO) = (10 * 10) = 100 mS 
+*/
+#define COUNTER_SMOKE_WARNING 		10 	
+
+/*
 				TimeOut Get Message
 	TIME_DELAY_TASK_MSG = TIME_DELAY_TASK_MSG + TIME_WAIT_EVENT_ALL(2 get event) = 1 + 9*2 = 19
 	TIMEOUT GET MESSAGE = (COUNTER_TIMEOUT * TIME_DELAY_TASK_MSG) = (2 * 19) = 38 mS 
@@ -78,7 +87,7 @@ extern volatile queueListValue_t QueueTask;
 void BTS_Sys_EventInit(void);
 void BTS_Sys_Init(void);
 
-void BTS_SysMutexInit(void);
+void BTS_Sys_MutexInit(void);
 void BTS_Sys_QueueInit(void);
 	
 void BTS_Sys_Debug(const char *format, ...);

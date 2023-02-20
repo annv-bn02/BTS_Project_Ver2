@@ -438,6 +438,11 @@
               <FileType>1</FileType>
               <FilePath>..\USER\bts_config_gpio.c</FilePath>
             </File>
+            <File>
+              <FileName>bts_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\bts_adc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -542,6 +547,11 @@
               <FileName>bts_device.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\USER\bts_device.h</FilePath>
+            </File>
+            <File>
+              <FileName>bts_adc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\USER\bts_adc.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -679,6 +689,12 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </component>
+      <component Cclass="Device" Cgroup="GD32F30x_StdPeripherals" Csub="ADC" Cvendor="GigaDevice" Cversion="2.1.0" condition="GD32F30x STDPERIPHERALS RCU">
+        <package name="GD32F30x_DFP" schemaVersion="1.1" url="http://gd32mcu.com/data/documents/pack/" vendor="GigaDevice" version="2.1.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
       <component Cclass="Device" Cgroup="GD32F30x_StdPeripherals" Csub="EXTI" Cvendor="GigaDevice" Cversion="2.1.0" condition="GD32F30x STDPERIPHERALS RCU">
         <package name="GD32F30x_DFP" schemaVersion="1.1" url="http://gd32mcu.com/data/documents/pack/" vendor="GigaDevice" version="2.1.0"/>
         <targetInfos>
@@ -729,6 +745,14 @@
       </component>
     </components>
     <files>
+      <file attr="config" category="source" name="Device\Firmware\Peripherals\src\gd32f30x_adc.c" version="2.1.0">
+        <instance index="0">RTE\Device\GD32F303RC\gd32f30x_adc.c</instance>
+        <component Cclass="Device" Cgroup="GD32F30x_StdPeripherals" Csub="ADC" Cvendor="GigaDevice" Cversion="2.1.0" condition="GD32F30x STDPERIPHERALS RCU"/>
+        <package name="GD32F30x_DFP" schemaVersion="1.1" url="http://gd32mcu.com/data/documents/pack/" vendor="GigaDevice" version="2.1.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
       <file attr="config" category="source" name="Device\Utilities\gd32f30x_eval.c" version="2.1.0">
         <instance index="0">RTE\Device\GD32F303RC\gd32f30x_eval.c</instance>
         <component Cclass="Device" Cgroup="EVAL" Csub="GD32F30x" Cvendor="GigaDevice" Cversion="2.1.0" condition="GD32F30x STDPERIPHERALS EVAL"/>

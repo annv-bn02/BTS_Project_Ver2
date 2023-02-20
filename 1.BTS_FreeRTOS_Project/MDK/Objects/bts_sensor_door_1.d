@@ -11,8 +11,9 @@
 .\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\system_gd32f30x.h
 .\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template\gd32f30x_libopt.h
 .\objects\bts_sensor_door_1.o: .\RTE\_Target_1\RTE_Components.h
-.\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_exti.h
+.\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_adc.h
 .\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h
+.\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_exti.h
 .\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h
 .\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h
 .\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h
@@ -38,12 +39,14 @@
 .\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\croutine.h
 .\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\event_groups.h
 .\objects\bts_sensor_door_1.o: C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\stream_buffer.h
+.\objects\bts_sensor_door_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\bts_sensor_door_1.o: ..\USER\bts_uart.h
 .\objects\bts_sensor_door_1.o: ..\USER\bts_sys.h
 .\objects\bts_sensor_door_1.o: ..\USER\bts_uart3.h
 .\objects\bts_sensor_door_1.o: ..\USER\bts_task_io.h
 .\objects\bts_sensor_door_1.o: ..\USER\bts_task_sys.h
 .\objects\bts_sensor_door_1.o: ..\USER\bts_task_msg_transmission.h
+.\objects\bts_sensor_door_1.o: ..\USER\bts_adc.h
 .\objects\bts_sensor_door_1.o: ..\USER\bts_event_define.h
 .\objects\bts_sensor_door_1.o: ..\USER\bts_mutex_define.h
 .\objects\bts_sensor_door_1.o: ..\USER\bts_queue_define.h

@@ -1,6 +1,6 @@
 #include "bts_task_io.h"
 
-#define TEST_UPDATE 1
+#define TEST_UPDATE 0
 
 static void GetQueue_UartToIo(void);
 static void SendEventUpdate_SysToIo(void);
@@ -14,14 +14,21 @@ void BTS_RTOS_Task_IO(void *p)
 {
 	EventBits_t event;
 	uint16_t counter_send = 0;
-
+	uint16_t counter_get_NTC = 0;
 	BTS_Device_Init();
 	Sensor_Smoke_Init();
+	Sensor_NTC_Init();
 	while(1)
 	{	
+		counter_get_NTC++;
 		if(Sensor_Smoke_Get() == 1)
 		{
 			BTS_Sys_Debug("\nSmoke Warning\n");
+		}
+		if(counter_get_NTC == 300)
+		{
+			counter_get_NTC = 0;
+			Sensor_NTC_Get();
 		}
 		
 #if (TEST_UPDATE == 1)
