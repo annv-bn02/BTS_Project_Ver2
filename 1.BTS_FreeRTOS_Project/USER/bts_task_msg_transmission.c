@@ -16,7 +16,7 @@ static void CreateControlDeviceTest(const uint8_t name, const uint8_t value);
 static void CreateMessageUpdateDeviceTest(void);
 static void CreateMessageUpdateSensorTest(void);
 
-uint32_t counter_update = 0;
+uint32_t counter_control = 0;
 
 void BTS_RTOS_Task_Msg(void *p)
 {
@@ -125,8 +125,7 @@ static void GetEventUpdate_SysToUart(EventBits_t event)
 		GetQueueDevice_IoToUart();
 		GetQueueSensor_IoToUart();
 		BTS_Sys_Debug("End Update\n\n");
-		counter_update++;
-		BTS_Sys_Debug("\nCounter Update Message: %d\n", counter_update);
+		
 	}
 }
 
@@ -137,8 +136,10 @@ static void GetEventControl_SysToUart(EventBits_t event)
 	if(event & EventTask.Sys.To_Uart.EventBit_FlagHasData)
 	{
 		BTS_Sys_Debug("Event Control SYSTEM to UART done\n");
-		GetQueueDevice_IoToUart();
-		GetQueueSensor_IoToUart();
+//		GetQueueDevice_IoToUart();
+//		GetQueueSensor_IoToUart();
+		counter_control++;
+		BTS_Sys_Debug("\nCounter Control Message: %d\n", counter_control);
 		BTS_Sys_Debug("End test\n\n");
 	}
 }

@@ -12,15 +12,16 @@ void Sensor_NTC_Init(void)
 uint8_t Sensor_NTC_Get(void)
 {	
 	
-	uint16_t adc_value;
+	uint16_t adc_value, adc_kalman;
 	adc_software_trigger_enable(ADC1, ADC_REGULAR_CHANNEL);
 	adc_flag_clear(ADC1, ADC_FLAG_EOC);
 	while(SET != adc_flag_get(ADC1, ADC_FLAG_EOC))
 	{
 	}
 	adc_value = adc_regular_data_read(ADC1) ;
+	adc_kalman = ADC_Kalman_Filter(adc_value, &Kalman_NTC);
 	BTS_Sys_Debug("12B: %d\r\n",adc_value); 
-	BTS_Sys_Debug("T: %fC\r\n", convert_NTC_Analog_to_Temperature(adc_value));
+	BTS_Sys_Debug("T: %fC\r\n", convert_NTC_Analog_to_Temperature(adc_kalman));
 	BTS_Sys_Debug("\r\n ***********************************\r\n");
 	return 1;
 }
