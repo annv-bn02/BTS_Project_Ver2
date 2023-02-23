@@ -14,6 +14,7 @@ typedef struct
 {
 	EventGroupHandle_t EventGroup;
 	uint8_t EventBit_FlagHasData;
+	uint8_t EventBit_FlagHasDataUpdate;
 }eventSysToUart_t;
 
 typedef struct
@@ -24,8 +25,8 @@ typedef struct
 
 typedef struct
 {
-	eventSysToUart_t To_Uart;
-	eventSysToIO_t To_IO;
+	eventSysToUart_t 	To_Uart;
+	eventSysToIO_t 		To_IO;
 }eventSysTo_t;
 
 /*-----------------------------------(EVENT LIST TASK UART TO )-----------------------------------*/
@@ -45,6 +46,7 @@ typedef struct
 {
 	EventGroupHandle_t EventGroup;
 	uint8_t EventBit_FlagHasData;
+	uint8_t EventBit_FlagHasDataUpdate;
 }eventIOToSys_t;
 
 typedef struct

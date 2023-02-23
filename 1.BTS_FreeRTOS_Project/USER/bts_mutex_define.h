@@ -13,19 +13,19 @@ extern "C"{
 typedef struct
 {
 	xSemaphoreHandle Lock_SendChar;
-	xSemaphoreHandle Lock_SendQueue;
+	xSemaphoreHandle Lock_Queue;
 }mutexSysList_t;
 
 /*-----------------------------------(SEMAPHORE SYS ALL)-----------------------------------*/
 typedef struct
 {
-	xSemaphoreHandle Lock_SendQueue;
+	xSemaphoreHandle Lock_Queue;
 }mutexIOList_t;
 
 /*-----------------------------------(SEMAPHORE SYS ALL)-----------------------------------*/
 typedef struct
 {
-	xSemaphoreHandle Lock_SendQueue;
+	xSemaphoreHandle Lock_Queue;
 }mutexUARTList_t;
 
 

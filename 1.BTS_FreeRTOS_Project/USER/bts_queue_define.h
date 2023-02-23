@@ -12,7 +12,6 @@ extern "C"{
 /*-----------------------------------(QUEUE LIST TASK SYS TO )-----------------------------------*/
 typedef struct
 {
-	xQueueHandle Queue_Sensor;
 	xQueueHandle Queue_Device;
 }queueSysToUart_t;
 
@@ -24,16 +23,26 @@ typedef struct
 /*-----------------------------------(QUEUE LIST TASK IO TO )-----------------------------------*/
 typedef struct
 {
-	xQueueHandle Queue_Sensor;
+	xQueueHandle Queue_Device;
+}queueIOToUart_t;
+
+typedef struct
+{
 	xQueueHandle Queue_Device;
 }queueIOToSys_t;
 
 typedef struct
 {
-	queueIOToSys_t To_Sys;
+	queueIOToSys_t 	To_Sys;
+	queueIOToUart_t To_Uart;
 }queueIOTo_t;
 
 /*-----------------------------------(QUEUE LIST TASK UART TO )-----------------------------------*/
+typedef struct
+{
+	xQueueHandle Queue_Device;
+}queueUartToIo_t;
+
 typedef struct
 {
 	xQueueHandle Queue_Device;
@@ -41,7 +50,8 @@ typedef struct
 
 typedef struct
 {
-	queueUartToSys_t To_Sys;
+	queueUartToSys_t 	To_Sys;
+	queueUartToIo_t 	To_Io;
 }queueUartTo_t;
 
 /*-----------------------------------(QUEUE LIST ALL)-----------------------------------*/

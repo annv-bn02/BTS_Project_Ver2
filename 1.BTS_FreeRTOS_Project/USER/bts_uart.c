@@ -1,24 +1,24 @@
 #include "bts_uart.h"
 
 
-uint8_t vru8_uart0_rxbuffer[100];
-__IO uint16_t vru16_uart0_rxcount; 
-__IO uint8_t vru16_uart0_flag_rx = 0;
+uint8_t uart0_rxbuffer[100];
+__IO uint16_t uart0_rxcount; 
+__IO uint8_t uart0_flag_rx = 0;
 /* You need this if you want use printf */
 /* Struct FILE is implemented in stdio.h */
-//struct __FILE {
-//    int dummy;
-//};
-//FILE __stdout;
+struct __FILE {
+    int dummy;
+};
+FILE __stdout;
 
-///* retarget the C library printf function to the USART */
-//int fputc(int ch, FILE *f)
-//{
-//  /* Place your implementation of fputc here */
-//  /* e.g. write a character to the USART3 and Loop until the end of transmission */
-//	SmartBTS_USART0_SendChar(ch);
-//	return ch;
-//}
+/* retarget the C library printf function to the USART */
+int fputc(int ch, FILE *f)
+{
+  /* Place your implementation of fputc here */
+  /* e.g. write a character to the USART3 and Loop until the end of transmission */
+	SmartBTS_USART0_SendChar(ch);
+	return ch;
+}
 
 void SmartBTS_USART0_Init(void)
 {
@@ -43,52 +43,52 @@ void SmartBTS_USART0_Init(void)
 	usart_enable(USART0);
 }
 
-void SmartBTS_USART0_SendChar(const uint8_t vr_datain)
+void SmartBTS_USART0_SendChar(const uint8_t datain)
 {
-	usart_data_transmit(USART0, vr_datain);
+	usart_data_transmit(USART0, datain);
 	while(RESET == usart_flag_get(USART0, USART_FLAG_TBE));
 }
 
-void SmartBTS_USART0_SendString(const char *vr_datain)
+void SmartBTS_USART0_SendString(const char *datain)
 {
-	while(*vr_datain)
+	while(*datain)
 	{
-		SmartBTS_USART0_SendChar((uint8_t)*vr_datain);
-		vr_datain++;
+		SmartBTS_USART0_SendChar((uint8_t)*datain);
+		datain++;
 	}
 }
 
-void SmartBTS_USART0_SendOneByte(const uint8_t vr_datain)
+void SmartBTS_USART0_SendOneByte(const uint8_t datain)
 {
-	usart_data_transmit(USART0, (uint8_t)vr_datain);
+	usart_data_transmit(USART0, (uint8_t)datain);
 	while(RESET == usart_flag_get(USART0, USART_FLAG_TBE));
 }
 
-void SmartBTS_USART0_SendArrayByte(const uint8_t *vr_datain, const uint16_t vr_arrsize)
+void SmartBTS_USART0_SendArrayByte(const uint8_t *datain, const uint16_t arrsize)
 {
-	uint8_t vr_countlength;
-	for(vr_countlength = 0; vr_countlength < vr_arrsize; vr_countlength++)
+	uint8_t countlength;
+	for(countlength = 0; countlength < arrsize; countlength++)
 	{
-		SmartBTS_USART0_SendOneByte(vr_datain[vr_countlength]);
+		SmartBTS_USART0_SendOneByte(datain[countlength]);
 	}
 }
 
 void USART0_IRQHandler(void)
 {
-	uint8_t vr_tempchar;
+	uint8_t tempchar;
 	if(RESET != usart_interrupt_flag_get(USART0, USART_INT_FLAG_RBNE))
 	{
-		vr_tempchar = usart_data_receive(USART0);
-		if(vr_tempchar != '\n')
+		tempchar = usart_data_receive(USART0);
+		if(tempchar != '\n')
 		{	
-			vru8_uart0_rxbuffer[vru16_uart0_rxcount] = vr_tempchar;
-			vru16_uart0_rxcount++;
+			uart0_rxbuffer[uart0_rxcount] = tempchar;
+			uart0_rxcount++;
 		}
 		else
 		{
-			vru8_uart0_rxbuffer[vru16_uart0_rxcount] = 0x00;
-			vru16_uart0_flag_rx = 1;
-			vru16_uart0_rxcount = 0;
+			uart0_rxbuffer[uart0_rxcount] = 0x00;
+			uart0_flag_rx = 1;
+			uart0_rxcount = 0;
 		}
 	}
 }

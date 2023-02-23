@@ -12,15 +12,15 @@ extern "C"{
 
 
 
-extern uint8_t vru8_uart0_rxbuffer[];
-extern __IO uint16_t vru16_uart0_rxcount; 
-extern __IO uint8_t vru16_uart0_flag_rx;	
+extern uint8_t uart0_rxbuffer[];
+extern __IO uint16_t uart0_rxcount; 
+extern __IO uint8_t uart0_flag_rx;	
 	
 void SmartBTS_USART0_Init(void);
-void SmartBTS_USART0_SendChar(const uint8_t vr_datain);
-void SmartBTS_USART0_SendString(const char *vr_datain);
-void SmartBTS_USART0_SendOneByte(const uint8_t vr_datain);
-void SmartBTS_USART0_SendArrayByte(const uint8_t *vr_datain, const uint16_t vr_arrsize );		
+void SmartBTS_USART0_SendChar(const uint8_t datain);
+void SmartBTS_USART0_SendString(const char *datain);
+void SmartBTS_USART0_SendOneByte(const uint8_t datain);
+void SmartBTS_USART0_SendArrayByte(const uint8_t *datain, const uint16_t arrsize );		
 #ifdef __cplusplus
 }
 #endif
