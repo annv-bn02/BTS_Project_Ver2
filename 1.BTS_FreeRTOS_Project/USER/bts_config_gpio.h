@@ -32,6 +32,7 @@ typedef struct
 	uint32_t mode;
 	uint32_t speed; 
 	uint32_t pin;
+	uint32_t adc_channel;
 	char *name;
 }define_GpioPin_t;
 

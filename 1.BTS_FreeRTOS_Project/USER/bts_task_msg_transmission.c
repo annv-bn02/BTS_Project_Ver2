@@ -75,6 +75,7 @@ static void GetQueueDevice_IoToUart(void)
 	uint8_t count = 0, size_data = 0;
 	uint8_t array_data_update_device[DEFAULT_MAX_NUMBER_DEVICE], array_data_out[50];
 	updateDeviceFrame_t frame_update_device;
+	xSemaphoreTake(MutexTask.UART.Lock_Queue, portMAX_DELAY);
 	if(xQueueReceive(QueueTask.IO.To_Uart.Queue_Device, (void *)&frame_update_device, TIME_WAIT_QUEUE))
 	{
 		for(count = 0; count < DEFAULT_MAX_NUMBER_DEVICE; count++)
@@ -87,6 +88,7 @@ static void GetQueueDevice_IoToUart(void)
 #endif
 		SmartBTS_USART3_SendArrayByte(array_data_out, size_data);
 	}
+	xSemaphoreGive(MutexTask.UART.Lock_Queue);
 }
 
 static void GetQueueSensor_IoToUart(void)
@@ -95,6 +97,7 @@ static void GetQueueSensor_IoToUart(void)
 	uint8_t array_data_out[50];
 	float array_data_update_sensor[DEFAULT_MAX_NUMBER_SENSOR];
 	updateSensorFrame_t frame_update_sensor;
+	xSemaphoreTake(MutexTask.UART.Lock_Queue, portMAX_DELAY);
 	if(xQueueReceive(QueueTask.IO.To_Uart.Queue_Device, (void *)&frame_update_sensor, TIME_WAIT_QUEUE))
 	{
 		for(count = 0; count < DEFAULT_MAX_NUMBER_SENSOR; count++)
@@ -107,6 +110,7 @@ static void GetQueueSensor_IoToUart(void)
 #endif
 		SmartBTS_USART3_SendArrayByte(array_data_out, size_data);
 	}
+	xSemaphoreGive(MutexTask.UART.Lock_Queue);
 }
 
 static void SendEventControl_UartToSys(void)

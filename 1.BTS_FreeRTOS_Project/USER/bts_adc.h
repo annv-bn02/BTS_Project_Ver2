@@ -22,6 +22,7 @@ typedef struct
 extern _adc_kalman_filter_t_ Kalman_NTC;
 
 void BTS_ADC_Init(void);
+void BTS_ADC_NTC_Init(uint8_t gpio_element);
 uint16_t BTS_ADC_Read(void);
 uint16_t ADC_Kalman_Filter(unsigned long ADC_Value, _adc_kalman_filter_t_ *_adc_kalman_);	
 

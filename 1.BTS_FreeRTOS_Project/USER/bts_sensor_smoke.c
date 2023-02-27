@@ -1,11 +1,20 @@
 #include "bts_sensor_smoke.h"
 
 uint16_t count_smoke_stt, smoke_flag_old, smoke_flag_new = 0;
+/**
+ * @brief Config the smoke sensor.
+ * 
+ */
 void Sensor_Smoke_Init(void)
 {
 	BTS_Config_GPIO_Sensor(SENSOR_SMOKE);
 }	
 
+/**
+ * @brief Get the smoke sensor status.
+ * 
+ * @return return 1 if smoke flag is low to high, otherwise return 0.
+ */
 uint8_t Sensor_Smoke_Get(void)
 {
 	smoke_flag_old = smoke_flag_new;

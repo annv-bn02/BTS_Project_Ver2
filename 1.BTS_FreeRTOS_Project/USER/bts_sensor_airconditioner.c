@@ -1,5 +1,9 @@
 #include "bts_sensor_airconditioner.h"
 
+/**
+ * @brief Config for the sensor air conditioner.
+ * 
+ */
 void Sensor_AirCondition_Init(void)
 {
 	BTS_Config_GPIO_Sensor(SENSOR_CONDITIONER_STATUS);

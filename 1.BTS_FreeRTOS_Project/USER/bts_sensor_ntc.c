@@ -2,13 +2,22 @@
 
 static float convert_NTC_Analog_to_Temperature(uint16_t adc_value);
 
+/**
+ * @brief Config for the sensor NTC.
+ * 
+ */
 void Sensor_NTC_Init(void)
 {
 	BTS_Config_GPIO_Sensor(SENSOR_NTC1);
 	BTS_Config_GPIO_Sensor(SENSOR_NTC2);
-	BTS_ADC_Init();
+	BTS_ADC_NTC_Init(SENSOR_NTC1);
 }
 
+/**
+ * @brief Get temperature value of the sensor NTC.
+ * 
+ * @return 1
+ */
 uint8_t Sensor_NTC_Get(void)
 {	
 	
@@ -26,6 +35,12 @@ uint8_t Sensor_NTC_Get(void)
 	return 1;
 }
 
+/**
+ * @brief convert analog value of NTC to temerature value.
+ * 
+ * @param adc_value : analog value of NTC.
+ * @return float : temperature value of NTC.
+ */
 static float convert_NTC_Analog_to_Temperature(uint16_t adc_value)
 {
 	float B = 3950, t0 = 298.15, r25 = 10000, v_out, r_ntc, v_supply = 3.3;

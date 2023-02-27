@@ -1,7 +1,7 @@
 #include "bts_task_io.h"
 
 #define TEST_UPDATE 1
-#define TEST_NTC 0
+#define TEST_NTC 1
 static void GetQueue_UartToIo(void);
 static void SendEventUpdate_SysToIo(void);
 static void SendEventControl_SysToIo(void);

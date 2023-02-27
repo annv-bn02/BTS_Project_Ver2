@@ -1,6 +1,6 @@
 #include "bts_convert.h"
 
-/*
+/**
     @brief: Chuyển biến kiểu float sang dạng mảng byte
     @node: Chức năng hàm được sử dụng để Chuyển biến kiểu float sang dạng mảng byte 4 phần tử
     @param data: Là một biến kiểu float cần được chuyển sang mảng byte.
@@ -13,7 +13,7 @@ uint8_t *Bts_Convert_From_Float_To_Bytes(float data)
     return input_convert.bytes;
 }
 
-/*
+/**
     @brief: Chuyển mảng các biến kiểu bytes sang biến kiểu float
     @node: Chức năng hàm được sử dụng để Chuyển mảng các biến kiểu bytes sang biến kiểu float
     @param data0: Biến đầu tiên của mảng .
@@ -32,7 +32,7 @@ float Bts_Convert_From_Bytes_To_Float(uint8_t data0, uint8_t data1, uint8_t data
      return input_convert.data_float;
 }
 
-/*
+/**
     @brief: Chuyển biến kiểu int sang dạng mảng byte
     @node: Chức năng hàm được sử dụng để Chuyển biến kiểu int sang dạng mảng byte 4 phần tử
     @param data: Là một biến kiểu int cần được chuyển sang mảng byte.
@@ -45,7 +45,7 @@ uint8_t *Bts_Convert_From_Int_To_Bytes(int data)
     return input_convert.bytes;
 }
 
-/*
+/**
     @brief: Chuyển mảng các biến kiểu bytes sang biến kiểu int
     @node: Chức năng hàm được sử dụng để Chuyển mảng các biến kiểu bytes sang biến kiểu int
     @param data0: Biến đầu tiên của mảng .
@@ -64,7 +64,7 @@ uint32_t Bts_Convert_From_Bytes_To_Int(uint8_t data1, uint8_t data2, uint8_t dat
     return input_convert.data_int;
 }
 
-/*
+/**
     @brief: Chuyển biến kiểu uint16_t sang dạng mảng byte
     @node: Chức năng hàm được sử dụng để Chuyển biến kiểu uint16_t sang dạng mảng byte 4 phần tử
     @param data: Là một biến kiểu uint16_t cần được chuyển sang mảng byte.
@@ -77,7 +77,7 @@ uint8_t *Bts_Convert_From_Uint16_To_Bytes(int data)
     return input_convert.bytes;
 }
 
-/*
+/**
     @brief: Chuyển mảng các biến kiểu bytes sang biến kiểu uint16_t
     @node: Chức năng hàm được sử dụng để Chuyển mảng các biến kiểu bytes sang biến kiểu uint16_t
     @param data0: Biến đầu tiên của mảng .
