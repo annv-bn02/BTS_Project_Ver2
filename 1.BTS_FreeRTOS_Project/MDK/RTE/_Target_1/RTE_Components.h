@@ -37,6 +37,8 @@
         #define RTE_CMSIS_RTOS2_FreeRTOS        /* CMSIS-RTOS2 FreeRTOS */
 /* GigaDevice::Device:GD32F30x_StdPeripherals:ADC:2.1.0 */
 #define RTE_DEVICE_STDPERIPHERALS_ADC
+/* GigaDevice::Device:GD32F30x_StdPeripherals:DMA:2.1.0 */
+#define RTE_DEVICE_STDPERIPHERALS_DMA
 /* GigaDevice::Device:GD32F30x_StdPeripherals:EXTI:2.1.0 */
 #define RTE_DEVICE_STDPERIPHERALS_EXTI
 /* GigaDevice::Device:GD32F30x_StdPeripherals:GPIO:2.1.0 */

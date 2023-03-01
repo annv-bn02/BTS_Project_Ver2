@@ -48,12 +48,7 @@ void BTS_Sys_QueueInit(void)
 {
 
 	QueueTask.Uart.To_Io.Queue_Device = xQueueCreate(10, sizeof(controlDeviceFrame_t));
-//	QueueTask.Uart.To_Sys.Queue_Device = xQueueCreate(10, sizeof(uint8_t));
-
-//	QueueTask.Sys.To_Uart.Queue_Device = xQueueCreate(10, sizeof(uint8_t));
-	
 	QueueTask.IO.To_Uart.Queue_Device = xQueueCreate(10, sizeof(updateDeviceFrame_t));
-//	QueueTask.IO.To_Sys.Queue_Device = xQueueCreate(10, sizeof(uint8_t));
 }
 
 /**

@@ -1,6 +1,5 @@
 #include "bts_sys.h"
 
-
 int main()
 {
 	BTS_Sys_Init();
@@ -12,4 +11,3 @@ int main()
 	vTaskStartScheduler();
 	return 0;
 }
-

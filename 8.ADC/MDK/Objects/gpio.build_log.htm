@@ -22,17 +22,34 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 F:\Project\1.BTS_Project\2.BTS_Project_Ver2\8.ADC\MDK\gpio.uvprojx
-Project File Date:  02/19/2023
+Project File Date:  02/27/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Build target 'Target 1'
-compiling bts_adc.c...
-..\USER\bts_adc.c(61): warning:  #940-D: missing return statement at end of non-void function "BTS_ADC_Read" 
-  }
-..\USER\bts_adc.c: 1 warning, 0 errors
+Rebuild target 'Target 1'
+compiling bts_uart.c...
+compiling main.c...
+compiling systick.c...
+compiling bts_flash.c...
+compiling bts_timer.c...
+..\USER\bts_timer.c(33): warning:  #188-D: enumerated type mixed with another type
+  			gpio_bit_write(GPIOA,GPIO_PIN_1, stt);
+..\USER\bts_timer.c: 1 warning, 0 errors
+compiling gd32f30x_adc.c...
+compiling gd32f30x_eval.c...
+compiling gd32f30x_dma.c...
+compiling gd32f30x_exti.c...
+compiling gd32f30x_gpio.c...
+compiling gd32f30x_misc.c...
+compiling gd32f30x_fmc.c...
+compiling gd32f30x_pmu.c...
+compiling gd32f30x_rcu.c...
+compiling gd32f30x_timer.c...
+assembling startup_gd32f30x_hd.s...
+compiling gd32f30x_usart.c...
+compiling system_gd32f30x.c...
 linking...
-Program Size: Code=8128 RO-data=400 RW-data=20 ZI-data=2244  
+Program Size: Code=4914 RO-data=394 RW-data=28 ZI-data=2244  
 FromELF: creating hex file...
 ".\Objects\gpio.axf" - 0 Error(s), 1 Warning(s).
 
@@ -50,6 +67,7 @@ Package Vendor: GigaDevice
                 GigaDevice GD32F30x Series Device Support and Examples
    * Component: GD32F30x Version: 2.1.0
    * Component: ADC Version: 2.1.0
+   * Component: DMA Version: 2.1.0
    * Component: EXTI Version: 2.1.0
    * Component: FMC Version: 2.1.0
    * Component: GPIO Version: 2.1.0
@@ -74,12 +92,16 @@ Package Vendor: GigaDevice
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: GigaDevice::Device:EVAL:GD32F30x:2.1.0
-      Include file:  Device\Utilities\gd32f30x_eval.h
       Source file:   Device\Utilities\gd32f30x_eval.c
+      Include file:  Device\Utilities\gd32f30x_eval.h
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:ADC:2.1.0
       Source file:   Device\Firmware\Peripherals\src\gd32f30x_adc.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_adc.h
+
+   * Component: GigaDevice::Device:GD32F30x_StdPeripherals:DMA:2.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_dma.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_dma.c
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:EXTI:2.1.0
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_exti.h
@@ -90,16 +112,16 @@ Package Vendor: GigaDevice
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_fmc.h
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:GPIO:2.1.0
-      Source file:   Device\Firmware\Peripherals\src\gd32f30x_gpio.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_gpio.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_gpio.c
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:MISC:2.1.0
       Source file:   Device\Firmware\Peripherals\src\gd32f30x_misc.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_misc.h
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:PMU:2.1.0
-      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_pmu.h
       Source file:   Device\Firmware\Peripherals\src\gd32f30x_pmu.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_pmu.h
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:RCU:2.1.0
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_rcu.h
@@ -117,10 +139,10 @@ Package Vendor: GigaDevice
       Include file:  Device\Template\gd32f30x_libopt.h
 
    * Component: GigaDevice::Device:Startup:2.1.0
-      Source file:   Device\Source\system_gd32f30x.c
       Source file:   Device\Source\ARM\startup_gd32f30x_hd.s
       Include file:  Device\Include\gd32f30x.h
-Build Time Elapsed:  00:00:00
+      Source file:   Device\Source\system_gd32f30x.c
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

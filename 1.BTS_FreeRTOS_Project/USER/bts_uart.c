@@ -20,6 +20,10 @@ int fputc(int ch, FILE *f)
 	return ch;
 }
 
+/**
+ * @brief Configure the UART0 for 9600 baud rate, 8 data bits, 1 stop bit, no parity
+ * 
+ */
 void SmartBTS_USART0_Init(void)
 {
 	rcu_periph_clock_enable(RCU_GPIOA);
@@ -43,12 +47,22 @@ void SmartBTS_USART0_Init(void)
 	usart_enable(USART0);
 }
 
+/**
+ * @brief Send a character through the USART0
+ * 
+ * @param datain 
+ */
 void SmartBTS_USART0_SendChar(const uint8_t datain)
 {
 	usart_data_transmit(USART0, datain);
 	while(RESET == usart_flag_get(USART0, USART_FLAG_TBE));
 }
 
+/**
+ * @brief Send a string through the USART0
+ * 
+ * @param datain 
+ */
 void SmartBTS_USART0_SendString(const char *datain)
 {
 	while(*datain)
@@ -58,12 +72,22 @@ void SmartBTS_USART0_SendString(const char *datain)
 	}
 }
 
+/**
+ * @brief Send a byte through the USART0
+ * 
+ * @param datain 
+ */
 void SmartBTS_USART0_SendOneByte(const uint8_t datain)
 {
 	usart_data_transmit(USART0, (uint8_t)datain);
 	while(RESET == usart_flag_get(USART0, USART_FLAG_TBE));
 }
 
+/**
+ * @brief Send array bytes through the USART0
+ * 
+ * @param datain 
+ */
 void SmartBTS_USART0_SendArrayByte(const uint8_t *datain, const uint16_t arrsize)
 {
 	uint8_t countlength;

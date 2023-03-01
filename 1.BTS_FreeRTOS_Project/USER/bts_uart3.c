@@ -8,22 +8,10 @@ uint8_t uart3_rxbuffer[100];
 __IO uint16_t uart3_rxcount; 
 __IO uint8_t uart3_flag_rx = 0;
 
-///* You need this if you want use printf */
-///* Struct FILE is implemented in stdio.h */
-//struct __FILE {
-//    int dummy;
-//};
-//FILE __stdout;
-
-///* retarget the C library printf function to the USART */
-//int fputc(int ch, FILE *f)
-//{
-//  /* Place your implementation of fputc here */
-//  /* e.g. write a character to the USART3 and Loop until the end of transmission */
-//	SmartBTS_USART3_SendChar(ch);
-//	return ch;
-//}
-
+/**
+ * @brief Configure the UART3 for 9600 baud rate, 8 data bits, 1 stop bit, no parity
+ * 
+ */
 void SmartBTS_USART3_Init(void)
 {
 	rcu_periph_clock_enable(RCU_GPIOC);
@@ -47,12 +35,22 @@ void SmartBTS_USART3_Init(void)
 	usart_enable(UART3);
 }
 
+/**
+ * @brief Send a character
+ * 
+ * @param datain 
+ */
 void SmartBTS_USART3_SendChar(const uint8_t datain)
 {
 	usart_data_transmit(UART3, datain);
 	while(RESET == usart_flag_get(UART3, USART_FLAG_TBE));
 }
 
+/**
+ * @brief send a string
+ * 
+ * @param datain 
+ */
 void SmartBTS_USART3_SendString(const char *datain)
 {
 	while(*datain)
@@ -62,12 +60,22 @@ void SmartBTS_USART3_SendString(const char *datain)
 	}
 }
 
+/**
+ * @brief Send a byte data
+ * 
+ * @param datain 
+ */
 void SmartBTS_USART3_SendOneByte(const uint8_t datain)
 {
 	usart_data_transmit(UART3, (uint8_t)datain);
 	while(RESET == usart_flag_get(UART3, USART_FLAG_TBE));
 }
 
+/**
+ * @brief Send array bytes data
+ * 
+ * @param datain 
+ */
 void SmartBTS_USART3_SendArrayByte(const uint8_t *datain, const uint16_t arrsize)
 {
 	uint8_t countlength;
@@ -78,6 +86,11 @@ void SmartBTS_USART3_SendArrayByte(const uint8_t *datain, const uint16_t arrsize
 }
 
 #if (UART_FSM == 1)
+/**
+ * @brief Received array data of message
+ * 
+ * @return uint8_t* : array data of message
+ */
 uint8_t* SmartBTS_USART3_Get_Array_Data(void)
 {
 	return array_out;
