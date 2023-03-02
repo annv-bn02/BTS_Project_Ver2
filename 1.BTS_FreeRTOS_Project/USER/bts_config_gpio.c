@@ -2,6 +2,10 @@
 
 #define NOT_USE_ADC 0
 
+/**
+ * @brief structure of gpio pin configuration for sensors.
+ * 
+ */
 define_GpioPin_t gpio_pin_sensor[SIZE_LIST_SENSOR]=
 {
 	{GPIOC, GPIO_MODE_AIN,    GPIO_OSPEED_MAX,   GPIO_PIN_1, ADC_CHANNEL_11,  "NTC1 Pin"},
@@ -12,6 +16,10 @@ define_GpioPin_t gpio_pin_sensor[SIZE_LIST_SENSOR]=
 	{GPIOC, GPIO_MODE_IPU,    GPIO_OSPEED_50MHZ, GPIO_PIN_10, NOT_USE_ADC, "AirCondition status Pin"},
 };
 
+/**
+ * @brief structure of gpio pin configuration for devices.
+ * 
+ */
 define_GpioPin_t gpio_pin_device[SIZE_LIST_DEVICE]=
 {
 	{GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_4, NOT_USE_ADC,  "AirCondition control Pin"},
@@ -19,6 +27,11 @@ define_GpioPin_t gpio_pin_device[SIZE_LIST_DEVICE]=
 	{GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_5, NOT_USE_ADC, "LAMP Pin"},	
 };
 
+/**
+ * @brief structure of status con trol of device.
+ * Fisrt data of array if state on
+ * Second data of array if state off
+ */
 define_status_device_t device_status[SIZE_LIST_DEVICE] =
 {
 	{0, 1},

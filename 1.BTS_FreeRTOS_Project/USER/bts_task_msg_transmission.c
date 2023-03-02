@@ -150,9 +150,9 @@ static void GetEventUpdate_SysToUart(EventBits_t event)
 	event = xEventGroupWaitBits(EventTask.Sys.To_Uart.EventGroup, EventTask.Sys.To_Uart.EventBit_FlagHasDataUpdate, pdTRUE, pdFALSE, TIME_WAIT_EVENT_ALL);
 	if(event & EventTask.Sys.To_Uart.EventBit_FlagHasDataUpdate)
 	{
-
+#if DEBUG_ALL
 		BTS_Sys_Debug("Update\n");
-
+#endif	
 		GetQueueDevice_IoToUart();
 		GetQueueSensor_IoToUart();
 #if DEBUG_ALL
