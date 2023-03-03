@@ -12,7 +12,12 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_BTS_Frame_Message_Update_Sensor(void);
 extern void test_BTS_Frame_Message_Update_Device(void);
-extern void test_BTS_Frame_Message_Control_Device(void);
+extern void test_BTS_Frame_Message_Control1_Device_Lamp(void);
+extern void test_BTS_Frame_Message_Control1_Device_Fan(void);
+extern void test_BTS_Frame_Message_Control1_Device_Conditioner(void);
+extern void test_BTS_Frame_Message_Control2_Device_Lamp(void);
+extern void test_BTS_Frame_Message_Control2_Device_Fan(void);
+extern void test_BTS_Frame_Message_Control2_Device_Conditioner(void);
 
 
 /*=======Mock Management=====*/
@@ -78,8 +83,13 @@ int main(void)
 {
   UnityBegin("test_bts_frame_message.c");
   run_test(test_BTS_Frame_Message_Update_Sensor, "test_BTS_Frame_Message_Update_Sensor", 12);
-  run_test(test_BTS_Frame_Message_Update_Device, "test_BTS_Frame_Message_Update_Device", 76);
-  run_test(test_BTS_Frame_Message_Control_Device, "test_BTS_Frame_Message_Control_Device", 139);
+  run_test(test_BTS_Frame_Message_Update_Device, "test_BTS_Frame_Message_Update_Device", 79);
+  run_test(test_BTS_Frame_Message_Control1_Device_Lamp, "test_BTS_Frame_Message_Control1_Device_Lamp", 141);
+  run_test(test_BTS_Frame_Message_Control1_Device_Fan, "test_BTS_Frame_Message_Control1_Device_Fan", 194);
+  run_test(test_BTS_Frame_Message_Control1_Device_Conditioner, "test_BTS_Frame_Message_Control1_Device_Conditioner", 247);
+  run_test(test_BTS_Frame_Message_Control2_Device_Lamp, "test_BTS_Frame_Message_Control2_Device_Lamp", 300);
+  run_test(test_BTS_Frame_Message_Control2_Device_Fan, "test_BTS_Frame_Message_Control2_Device_Fan", 353);
+  run_test(test_BTS_Frame_Message_Control2_Device_Conditioner, "test_BTS_Frame_Message_Control2_Device_Conditioner", 406);
 
   return UnityEnd();
 }

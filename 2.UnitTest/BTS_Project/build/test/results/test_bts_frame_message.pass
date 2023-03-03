@@ -8,21 +8,45 @@
   :message: ''
   :unity_test_time: 0
 - :test: test_BTS_Frame_Message_Update_Device
-  :line: 76
+  :line: 79
   :message: ''
   :unity_test_time: 0
-- :test: test_BTS_Frame_Message_Control_Device
-  :line: 139
+- :test: test_BTS_Frame_Message_Control1_Device_Lamp
+  :line: 141
+  :message: ''
+  :unity_test_time: 0
+- :test: test_BTS_Frame_Message_Control1_Device_Fan
+  :line: 194
+  :message: ''
+  :unity_test_time: 0
+- :test: test_BTS_Frame_Message_Control1_Device_Conditioner
+  :line: 247
+  :message: ''
+  :unity_test_time: 0
+- :test: test_BTS_Frame_Message_Control2_Device_Lamp
+  :line: 300
+  :message: ''
+  :unity_test_time: 0
+- :test: test_BTS_Frame_Message_Control2_Device_Fan
+  :line: 353
+  :message: ''
+  :unity_test_time: 0
+- :test: test_BTS_Frame_Message_Control2_Device_Conditioner
+  :line: 406
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 3
-  :passed: 3
+  :total: 8
+  :passed: 8
   :failed: 0
   :ignored: 0
 :stdout:
+- ''
+- ''
+- "--------------------(Start TEST bts_frame_message)--------------------"
+- ''
 - ''
 - "--------------------(Start Create)--------------------"
 - 'size: 48'
@@ -60,6 +84,66 @@
 - ''
 - "--------------------(Start Create)--------------------"
 - 'size: 10'
+- '55 aa 03 00 04 00 03 00 8e f1 '
+- "--------------------(Create Done)--------------------"
+- ''
+- "--------------------(Start Detect)--------------------"
+- 'StartFrame:  aa55'
+- 'TypeMessage: 3'
+- 'Length:      4'
+- 'Name:        3'
+- 'Value:       0'
+- 'Checksum:    f18e'
+- ''
+- "--------------------(Detect Done)--------------------"
+- ''
+- "--------------------(Start Create)--------------------"
+- 'size: 10'
+- '55 aa 03 00 04 00 02 00 8f 61 '
+- "--------------------(Create Done)--------------------"
+- ''
+- "--------------------(Start Detect)--------------------"
+- 'StartFrame:  aa55'
+- 'TypeMessage: 3'
+- 'Length:      4'
+- 'Name:        2'
+- 'Value:       0'
+- 'Checksum:    618f'
+- ''
+- "--------------------(Detect Done)--------------------"
+- ''
+- "--------------------(Start Create)--------------------"
+- 'size: 10'
+- '55 aa 03 00 04 00 01 00 8f 91 '
+- "--------------------(Create Done)--------------------"
+- ''
+- "--------------------(Start Detect)--------------------"
+- 'StartFrame:  aa55'
+- 'TypeMessage: 3'
+- 'Length:      4'
+- 'Name:        1'
+- 'Value:       0'
+- 'Checksum:    918f'
+- ''
+- "--------------------(Detect Done)--------------------"
+- ''
+- "--------------------(Start Create)--------------------"
+- 'size: 10'
+- '55 aa 03 00 04 00 03 ff ce b1 '
+- "--------------------(Create Done)--------------------"
+- ''
+- "--------------------(Start Detect)--------------------"
+- 'StartFrame:  aa55'
+- 'TypeMessage: 3'
+- 'Length:      4'
+- 'Name:        3'
+- 'Value:       ff'
+- 'Checksum:    b1ce'
+- ''
+- "--------------------(Detect Done)--------------------"
+- ''
+- "--------------------(Start Create)--------------------"
+- 'size: 10'
 - '55 aa 03 00 04 00 02 ff cf 21 '
 - "--------------------(Create Done)--------------------"
 - ''
@@ -72,4 +156,23 @@
 - 'Checksum:    21cf'
 - ''
 - "--------------------(Detect Done)--------------------"
-:time: 0.008062199999926634
+- ''
+- "--------------------(Start Create)--------------------"
+- 'size: 10'
+- '55 aa 03 00 04 00 01 ff cf d1 '
+- "--------------------(Create Done)--------------------"
+- ''
+- "--------------------(Start Detect)--------------------"
+- 'StartFrame:  aa55'
+- 'TypeMessage: 3'
+- 'Length:      4'
+- 'Name:        1'
+- 'Value:       ff'
+- 'Checksum:    d1cf'
+- ''
+- "--------------------(Detect Done)--------------------"
+- ''
+- ''
+- "--------------------(End TEST bts_frame_message)--------------------"
+- ''
+:time: 0.009372800000164716

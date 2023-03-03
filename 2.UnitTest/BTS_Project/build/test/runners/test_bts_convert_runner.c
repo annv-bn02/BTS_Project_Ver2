@@ -81,11 +81,11 @@ int main(void)
 {
   UnityBegin("test_bts_convert.c");
   run_test(test_BTS_Convert_Float_To_Bytes, "test_BTS_Convert_Float_To_Bytes", 13);
-  run_test(test_BTS_Convert_Int_To_Bytes, "test_BTS_Convert_Int_To_Bytes", 31);
-  run_test(test_BTS_Convert_Uint16_To_Bytes, "test_BTS_Convert_Uint16_To_Bytes", 49);
-  run_test(test_BTS_Convert_Bytes_To_Float, "test_BTS_Convert_Bytes_To_Float", 67);
-  run_test(test_BTS_Convert_Bytes_To_Int, "test_BTS_Convert_Bytes_To_Int", 78);
-  run_test(test_BTS_Convert_Bytes_To_Uint16, "test_BTS_Convert_Bytes_To_Uint16", 89);
+  run_test(test_BTS_Convert_Int_To_Bytes, "test_BTS_Convert_Int_To_Bytes", 34);
+  run_test(test_BTS_Convert_Uint16_To_Bytes, "test_BTS_Convert_Uint16_To_Bytes", 52);
+  run_test(test_BTS_Convert_Bytes_To_Float, "test_BTS_Convert_Bytes_To_Float", 70);
+  run_test(test_BTS_Convert_Bytes_To_Int, "test_BTS_Convert_Bytes_To_Int", 81);
+  run_test(test_BTS_Convert_Bytes_To_Uint16, "test_BTS_Convert_Bytes_To_Uint16", 92);
 
   return UnityEnd();
 }

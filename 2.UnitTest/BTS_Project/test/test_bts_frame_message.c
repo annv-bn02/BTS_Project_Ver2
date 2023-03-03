@@ -11,6 +11,9 @@ void tearDown(void)
 
 void test_BTS_Frame_Message_Update_Sensor(void)
 {
+
+    printf("\n\n--------------------(Start TEST bts_frame_message)--------------------\n\n");
+
     messageFrameMsg_t dataout;
     float data_test[DEFAULT_MAX_NUMBER_SENSOR];
     int16_t size_data;
@@ -135,17 +138,175 @@ void test_BTS_Frame_Message_Update_Device(void)
     printf("\n--------------------(Detect Done)--------------------\n");
 }
 
-
-void test_BTS_Frame_Message_Control_Device(void)
+void test_BTS_Frame_Message_Control1_Device_Lamp(void)
 {
     messageFrameMsg_t dataout;
     uint8_t name, value;
     int16_t size_data;
     uint8_t array_out[100];
-    int8_t array_test[100] = {0x55, 0xaa, 0x03, 0x00, 0x04, 0x00, 0x02, 0xff};
+    int8_t array_test[100] = {0x55, 0xaa, 0x03, 0x00, 0x04, 0x00, 0x03, 0x00};
     printf("\n--------------------(Start Create)--------------------\n");
     /*---------------------------------(Data)---------------------------------*/
-    name = DEVICE_LAMP;
+    name = DEVICE_LAMP + 1;
+    value = 0;
+    /*---------------------------------(Data)---------------------------------*/
+    size_data = BTS_Frame_Control_Device(name, value, array_out);
+
+    for(int i = 0; i < (DEFAULT_BYTE_CONTROL_DEVICE + DEFAULT_BYTE);i++)
+    {
+        TEST_ASSERT_EQUAL_UINT8(array_test[i], array_out[i]);
+    }
+    printf("size: %d\n",size_data);
+    if(size_data > 0)
+    {
+        for(int i = 0; i < size_data; i++)
+        {
+            if(array_out[i]<= 0x0f)
+            {
+                printf("0%x ", array_out[i]);
+            }
+            else
+            {
+                printf("%x ", array_out[i]);
+            }
+        }
+        printf("\n--------------------(Create Done)--------------------\n");
+    }
+
+    printf("\n--------------------(Start Detect)--------------------\n");
+    size_data = DetectMessage(array_out, &dataout);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Start, START_BYTE);
+    TEST_ASSERT_EQUAL_UINT16(dataout.TypeMessage, TYPE_MESSAGE_CONTROL_DEVICE);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Length, DEFAULT_BYTE_CONTROL_DEVICE + DEFAULT_BYTE_CHECKSUM);
+    TEST_ASSERT_EQUAL_UINT8(dataout.Data[0], name);
+    TEST_ASSERT_EQUAL_UINT8(dataout.Data[1], value);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Crc, Bts_Convert_From_Bytes_To_Uint16(array_out[size_data - 2], array_out[size_data - 1]));
+    printf("StartFrame:  %x\n", dataout.Start);
+    printf("TypeMessage: %x\n", dataout.TypeMessage);
+    printf("Length:      %x\n", dataout.Length);
+    printf("Name:        %x\n", dataout.Data[0]);
+    printf("Value:       %x\n", dataout.Data[1]);
+    printf("Checksum:    %x\n", dataout.Crc);
+    printf("\n--------------------(Detect Done)--------------------\n");
+    
+}
+
+void test_BTS_Frame_Message_Control1_Device_Fan(void)
+{
+    messageFrameMsg_t dataout;
+    uint8_t name, value;
+    int16_t size_data;
+    uint8_t array_out[100];
+    int8_t array_test[100] = {0x55, 0xaa, 0x03, 0x00, 0x04, 0x00, 0x02, 0x00};
+    printf("\n--------------------(Start Create)--------------------\n");
+    /*---------------------------------(Data)---------------------------------*/
+    name = DEVICE_FAN + 1;
+    value = 0;
+    /*---------------------------------(Data)---------------------------------*/
+    size_data = BTS_Frame_Control_Device(name, value, array_out);
+
+    for(int i = 0; i < (DEFAULT_BYTE_CONTROL_DEVICE + DEFAULT_BYTE);i++)
+    {
+        TEST_ASSERT_EQUAL_UINT8(array_test[i], array_out[i]);
+    }
+    printf("size: %d\n",size_data);
+    if(size_data > 0)
+    {
+        for(int i = 0; i < size_data; i++)
+        {
+            if(array_out[i]<= 0x0f)
+            {
+                printf("0%x ", array_out[i]);
+            }
+            else
+            {
+                printf("%x ", array_out[i]);
+            }
+        }
+        printf("\n--------------------(Create Done)--------------------\n");
+    }
+
+    printf("\n--------------------(Start Detect)--------------------\n");
+    size_data = DetectMessage(array_out, &dataout);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Start, START_BYTE);
+    TEST_ASSERT_EQUAL_UINT16(dataout.TypeMessage, TYPE_MESSAGE_CONTROL_DEVICE);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Length, DEFAULT_BYTE_CONTROL_DEVICE + DEFAULT_BYTE_CHECKSUM);
+    TEST_ASSERT_EQUAL_UINT8(dataout.Data[0], name);
+    TEST_ASSERT_EQUAL_UINT8(dataout.Data[1], value);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Crc, Bts_Convert_From_Bytes_To_Uint16(array_out[size_data - 2], array_out[size_data - 1]));
+    printf("StartFrame:  %x\n", dataout.Start);
+    printf("TypeMessage: %x\n", dataout.TypeMessage);
+    printf("Length:      %x\n", dataout.Length);
+    printf("Name:        %x\n", dataout.Data[0]);
+    printf("Value:       %x\n", dataout.Data[1]);
+    printf("Checksum:    %x\n", dataout.Crc);
+    printf("\n--------------------(Detect Done)--------------------\n");
+    
+}
+
+void test_BTS_Frame_Message_Control1_Device_Conditioner(void)
+{
+    messageFrameMsg_t dataout;
+    uint8_t name, value;
+    int16_t size_data;
+    uint8_t array_out[100];
+    int8_t array_test[100] = {0x55, 0xaa, 0x03, 0x00, 0x04, 0x00, 0x01, 0x00};
+    printf("\n--------------------(Start Create)--------------------\n");
+    /*---------------------------------(Data)---------------------------------*/
+    name = DEVICE_CONDITIONER + 1;
+    value = 0;
+    /*---------------------------------(Data)---------------------------------*/
+    size_data = BTS_Frame_Control_Device(name, value, array_out);
+
+    for(int i = 0; i < (DEFAULT_BYTE_CONTROL_DEVICE + DEFAULT_BYTE);i++)
+    {
+        TEST_ASSERT_EQUAL_UINT8(array_test[i], array_out[i]);
+    }
+    printf("size: %d\n",size_data);
+    if(size_data > 0)
+    {
+        for(int i = 0; i < size_data; i++)
+        {
+            if(array_out[i]<= 0x0f)
+            {
+                printf("0%x ", array_out[i]);
+            }
+            else
+            {
+                printf("%x ", array_out[i]);
+            }
+        }
+        printf("\n--------------------(Create Done)--------------------\n");
+    }
+
+    printf("\n--------------------(Start Detect)--------------------\n");
+    size_data = DetectMessage(array_out, &dataout);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Start, START_BYTE);
+    TEST_ASSERT_EQUAL_UINT16(dataout.TypeMessage, TYPE_MESSAGE_CONTROL_DEVICE);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Length, DEFAULT_BYTE_CONTROL_DEVICE + DEFAULT_BYTE_CHECKSUM);
+    TEST_ASSERT_EQUAL_UINT8(dataout.Data[0], name);
+    TEST_ASSERT_EQUAL_UINT8(dataout.Data[1], value);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Crc, Bts_Convert_From_Bytes_To_Uint16(array_out[size_data - 2], array_out[size_data - 1]));
+    printf("StartFrame:  %x\n", dataout.Start);
+    printf("TypeMessage: %x\n", dataout.TypeMessage);
+    printf("Length:      %x\n", dataout.Length);
+    printf("Name:        %x\n", dataout.Data[0]);
+    printf("Value:       %x\n", dataout.Data[1]);
+    printf("Checksum:    %x\n", dataout.Crc);
+    printf("\n--------------------(Detect Done)--------------------\n");
+    
+}
+
+void test_BTS_Frame_Message_Control2_Device_Lamp(void)
+{
+    messageFrameMsg_t dataout;
+    uint8_t name, value;
+    int16_t size_data;
+    uint8_t array_out[100];
+    int8_t array_test[100] = {0x55, 0xaa, 0x03, 0x00, 0x04, 0x00, 0x03, 0xff};
+    printf("\n--------------------(Start Create)--------------------\n");
+    /*---------------------------------(Data)---------------------------------*/
+    name = DEVICE_LAMP + 1;
     value = 255;
     /*---------------------------------(Data)---------------------------------*/
     size_data = BTS_Frame_Control_Device(name, value, array_out);
@@ -187,4 +348,113 @@ void test_BTS_Frame_Message_Control_Device(void)
     printf("Checksum:    %x\n", dataout.Crc);
     printf("\n--------------------(Detect Done)--------------------\n");
     
+}
+
+void test_BTS_Frame_Message_Control2_Device_Fan(void)
+{
+    messageFrameMsg_t dataout;
+    uint8_t name, value;
+    int16_t size_data;
+    uint8_t array_out[100];
+    int8_t array_test[100] = {0x55, 0xaa, 0x03, 0x00, 0x04, 0x00, 0x02, 0xff};
+    printf("\n--------------------(Start Create)--------------------\n");
+    /*---------------------------------(Data)---------------------------------*/
+    name = DEVICE_FAN + 1;
+    value = 255;
+    /*---------------------------------(Data)---------------------------------*/
+    size_data = BTS_Frame_Control_Device(name, value, array_out);
+
+    for(int i = 0; i < (DEFAULT_BYTE_CONTROL_DEVICE + DEFAULT_BYTE);i++)
+    {
+        TEST_ASSERT_EQUAL_UINT8(array_test[i], array_out[i]);
+    }
+    printf("size: %d\n",size_data);
+    if(size_data > 0)
+    {
+        for(int i = 0; i < size_data; i++)
+        {
+            if(array_out[i]<= 0x0f)
+            {
+                printf("0%x ", array_out[i]);
+            }
+            else
+            {
+                printf("%x ", array_out[i]);
+            }
+        }
+        printf("\n--------------------(Create Done)--------------------\n");
+    }
+
+    printf("\n--------------------(Start Detect)--------------------\n");
+    size_data = DetectMessage(array_out, &dataout);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Start, START_BYTE);
+    TEST_ASSERT_EQUAL_UINT16(dataout.TypeMessage, TYPE_MESSAGE_CONTROL_DEVICE);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Length, DEFAULT_BYTE_CONTROL_DEVICE + DEFAULT_BYTE_CHECKSUM);
+    TEST_ASSERT_EQUAL_UINT8(dataout.Data[0], name);
+    TEST_ASSERT_EQUAL_UINT8(dataout.Data[1], value);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Crc, Bts_Convert_From_Bytes_To_Uint16(array_out[size_data - 2], array_out[size_data - 1]));
+    printf("StartFrame:  %x\n", dataout.Start);
+    printf("TypeMessage: %x\n", dataout.TypeMessage);
+    printf("Length:      %x\n", dataout.Length);
+    printf("Name:        %x\n", dataout.Data[0]);
+    printf("Value:       %x\n", dataout.Data[1]);
+    printf("Checksum:    %x\n", dataout.Crc);
+    printf("\n--------------------(Detect Done)--------------------\n");
+    
+}
+
+void test_BTS_Frame_Message_Control2_Device_Conditioner(void)
+{
+    messageFrameMsg_t dataout;
+    uint8_t name, value;
+    int16_t size_data;
+    uint8_t array_out[100];
+    int8_t array_test[100] = {0x55, 0xaa, 0x03, 0x00, 0x04, 0x00, 0x01, 0xff};
+    printf("\n--------------------(Start Create)--------------------\n");
+    /*---------------------------------(Data)---------------------------------*/
+    name = DEVICE_CONDITIONER + 1;
+    value = 255;
+    /*---------------------------------(Data)---------------------------------*/
+    size_data = BTS_Frame_Control_Device(name, value, array_out);
+
+    for(int i = 0; i < (DEFAULT_BYTE_CONTROL_DEVICE + DEFAULT_BYTE);i++)
+    {
+        TEST_ASSERT_EQUAL_UINT8(array_test[i], array_out[i]);
+    }
+    printf("size: %d\n",size_data);
+    if(size_data > 0)
+    {
+        for(int i = 0; i < size_data; i++)
+        {
+            if(array_out[i]<= 0x0f)
+            {
+                printf("0%x ", array_out[i]);
+            }
+            else
+            {
+                printf("%x ", array_out[i]);
+            }
+        }
+        printf("\n--------------------(Create Done)--------------------\n");
+    }
+
+    printf("\n--------------------(Start Detect)--------------------\n");
+    size_data = DetectMessage(array_out, &dataout);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Start, START_BYTE);
+    TEST_ASSERT_EQUAL_UINT16(dataout.TypeMessage, TYPE_MESSAGE_CONTROL_DEVICE);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Length, DEFAULT_BYTE_CONTROL_DEVICE + DEFAULT_BYTE_CHECKSUM);
+    TEST_ASSERT_EQUAL_UINT8(dataout.Data[0], name);
+    TEST_ASSERT_EQUAL_UINT8(dataout.Data[1], value);
+    TEST_ASSERT_EQUAL_UINT16(dataout.Crc, Bts_Convert_From_Bytes_To_Uint16(array_out[size_data - 2], array_out[size_data - 1]));
+    printf("StartFrame:  %x\n", dataout.Start);
+    printf("TypeMessage: %x\n", dataout.TypeMessage);
+    printf("Length:      %x\n", dataout.Length);
+    printf("Name:        %x\n", dataout.Data[0]);
+    printf("Value:       %x\n", dataout.Data[1]);
+    printf("Checksum:    %x\n", dataout.Crc);
+    printf("\n--------------------(Detect Done)--------------------\n");
+    
+
+    printf("\n\n--------------------(End TEST bts_frame_message)--------------------\n\n");
+
 }

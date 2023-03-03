@@ -37,8 +37,8 @@ Note: source file '..\USER\bts_device.c' - object file renamed from '.\Objects\b
 compiling main.c...
 compiling bts_uart3.c...
 compiling bts_uart.c...
-compiling bts_task_io.c...
 compiling bts_sys.c...
+compiling bts_task_io.c...
 compiling bts_task_msg_transmission.c...
 ..\USER\bts_task_msg_transmission.c(208): warning:  #177-D: function "CreateControlDeviceTest"  was declared but never referenced
   static void CreateControlDeviceTest(const uint8_t name, const uint8_t value)
@@ -49,30 +49,30 @@ compiling bts_task_msg_transmission.c...
 ..\USER\bts_task_msg_transmission.c: 3 warnings, 0 errors
 compiling bts_task_sys.c...
 compiling bts_get_message.c...
-compiling bts_frame_message.c...
 compiling bts_convert.c...
-compiling bts_adc.c...
+compiling bts_frame_message.c...
 compiling bts_config_gpio.c...
+compiling bts_adc.c...
 compiling bts_sensor_airconditioner.c...
 compiling bts_sensor_door.c...
+compiling bts_sensor_smoke.c...
 compiling bts_sensor_ntc.c...
 ..\USER\bts_sensor_ntc.c(24): warning:  #550-D: variable "adc_kalman"  was set but never used
   	uint16_t adc_value, adc_kalman;
 ..\USER\bts_sensor_ntc.c(46): warning:  #177-D: function "convert_NTC_Analog_to_Temperature"  was declared but never referenced
   static float convert_NTC_Analog_to_Temperature(uint16_t adc_value)
 ..\USER\bts_sensor_ntc.c: 2 warnings, 0 errors
-compiling bts_sensor_smoke.c...
 compiling bts_sensor_water.c...
 compiling bts_automatic_control.c...
 compiling bts_device.c...
 ..\USER\bts_device.c(31): warning:  #188-D: enumerated type mixed with another type
   	gpio_bit_write(gpio_pin_device[name_device].port, gpio_pin_device[name_device].pin, status);
 ..\USER\bts_device.c: 1 warning, 0 errors
-compiling clib_arm.c...
 compiling os_systick.c...
+compiling clib_arm.c...
 compiling cmsis_os2.c...
-compiling gd32f30x_adc.c...
 compiling gd32f30x_dma.c...
+compiling gd32f30x_adc.c...
 compiling gd32f30x_eval.c...
 compiling gd32f30x_exti.c...
 compiling gd32f30x_gpio.c...
@@ -93,7 +93,7 @@ compiling stream_buffer.c...
 compiling timers.c...
 compiling tasks.c...
 linking...
-Program Size: Code=21492 RO-data=704 RW-data=380 ZI-data=14044  
+Program Size: Code=21496 RO-data=704 RW-data=380 ZI-data=14044  
 FromELF: creating hex file...
 ".\Objects\gpio.axf" - 0 Error(s), 6 Warning(s).
 
@@ -158,14 +158,14 @@ Package Vendor: GigaDevice
       Include file:  CMSIS\RTOS2\FreeRTOS\Config\ARMCM\FreeRTOSConfig.h
 
    * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.5.1
-      Source file:   Source\portable\RVDS\ARM_CM4F\port.c
       Source file:   Source\tasks.c
-      Source file:   Source\queue.c
+      Include file:  Source\include\task.h
+      Include file:  Source\include\semphr.h
       Include file:  Source\include\FreeRTOS.h
       Include file:  Source\include\queue.h
-      Include file:  Source\include\semphr.h
-      Include file:  Source\include\task.h
       Source file:   Source\list.c
+      Source file:   Source\queue.c
+      Source file:   Source\portable\RVDS\ARM_CM4F\port.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
 
    * Component: ARM.FreeRTOS::RTOS:Coroutines:10.5.1
@@ -173,15 +173,15 @@ Package Vendor: GigaDevice
       Include file:  Source\include\croutine.h
 
    * Component: ARM.FreeRTOS::RTOS:Event Groups:10.5.1
-      Source file:   Source\event_groups.c
       Include file:  Source\include\event_groups.h
+      Source file:   Source\event_groups.c
 
    * Component: ARM.FreeRTOS::RTOS:Heap:Heap_4:10.5.1
       Source file:   Source\portable\MemMang\heap_4.c
 
    * Component: ARM.FreeRTOS::RTOS:Message Buffer:10.5.1
-      Include file:  Source\include\message_buffer.h
       Source file:   Source\stream_buffer.c
+      Include file:  Source\include\message_buffer.h
 
    * Component: ARM.FreeRTOS::RTOS:Stream Buffer:10.5.1
       Source file:   Source\stream_buffer.c
@@ -194,18 +194,18 @@ Package Vendor: GigaDevice
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: ARM::CMSIS:RTOS2:FreeRTOS:Cortex-M:10.5.1
-      Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c
-      Source file:   CMSIS\RTOS2\FreeRTOS\Source\ARM\clib_arm.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\os_systick.c
       Include file:  CMSIS\RTOS2\FreeRTOS\Include\freertos_mpool.h
+      Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c
+      Source file:   CMSIS\RTOS2\FreeRTOS\Source\ARM\clib_arm.c
 
    * Component: GigaDevice::Device:EVAL:GD32F30x:2.1.0
       Include file:  Device\Utilities\gd32f30x_eval.h
       Source file:   Device\Utilities\gd32f30x_eval.c
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:ADC:2.1.0
-      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_adc.h
       Source file:   Device\Firmware\Peripherals\src\gd32f30x_adc.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_adc.h
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:DMA:2.1.0
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_dma.h
@@ -232,8 +232,8 @@ Package Vendor: GigaDevice
       Source file:   Device\Firmware\Peripherals\src\gd32f30x_rcu.c
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:USART:2.1.0
-      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_usart.h
       Source file:   Device\Firmware\Peripherals\src\gd32f30x_usart.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_usart.h
 
    * Component: GigaDevice::Device:GD32F30x_libopt:2.1.0
       Include file:  Device\Template\gd32f30x_libopt.h
@@ -242,7 +242,7 @@ Package Vendor: GigaDevice
       Include file:  Device\Include\gd32f30x.h
       Source file:   Device\Source\system_gd32f30x.c
       Source file:   Device\Source\ARM\startup_gd32f30x_hd.s
-Build Time Elapsed:  00:00:06
+Build Time Elapsed:  00:00:07
 </pre>
 </body>
 </html>

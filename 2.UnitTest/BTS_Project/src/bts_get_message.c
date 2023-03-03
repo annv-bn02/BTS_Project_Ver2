@@ -10,48 +10,48 @@ int32_t timeout_wait;
 fsmListState_e	fsm_state;
 static void ClearState(void);
 
-/**
- * @brief : Flag of the new message
- * 
- * @param lenght : Length of the new message
- * @return uint16_t : Return 1 if received successfully message, else return 0
- */
-uint16_t Is_Message(uint16_t *lenght)
-{
-	if(flag_new_message == TRUE)
-	{
-		timeout_wait = FALSE;
-		flag_new_message = FALSE;
-		*lenght = length_message;
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
-}
+// /**
+//  * @brief : Flag of the new message
+//  * 
+//  * @param lenght : Length of the new message
+//  * @return uint16_t : Return 1 if received successfully message, else return 0
+//  */
+// uint16_t Is_Message(uint16_t *lenght)
+// {
+// 	if(flag_new_message == TRUE)
+// 	{
+// 		timeout_wait = FALSE;
+// 		flag_new_message = FALSE;
+// 		*lenght = length_message;
+// 		return 1;
+// 	}
+// 	else
+// 	{
+// 		return 0;
+// 	}
+// }
 
-/**
- * @brief Get the Message:: Time Out object
- * time to receive the new message 
- * used to avoid the case where the message is long or the message is shorter than the message length
- */
-void Time_Out_Get_Message(void)
-{
-	if(timeout_wait == TRUE)
-	{  
-		if(timeout_start >= COUNTER_TIMEOUT)
-		{		
-			length_message = 0;
-			ClearState();
-		}
-		timeout_start++;
-	}
-	else
-	{
-		ClearState();
-	}
-}
+// /**
+//  * @brief Get the Message:: Time Out object
+//  * time to receive the new message 
+//  * used to avoid the case where the message is long or the message is shorter than the message length
+//  */
+// void Time_Out_Get_Message(void)
+// {
+// 	if(timeout_wait == TRUE)
+// 	{  
+// 		if(timeout_start >= COUNTER_TIMEOUT)
+// 		{		
+// 			length_message = 0;
+// 			ClearState();
+// 		}
+// 		timeout_start++;
+// 	}
+// 	else
+// 	{
+// 		ClearState();
+// 	}
+// }
 
 /**
  * @brief Get the message from message buffer received from serial port

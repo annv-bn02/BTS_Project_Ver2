@@ -10,7 +10,12 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_bts_get_message_NeedToImplement(void);
+extern void test_BTS_Get_Message_Control1_Device_Lamp(void);
+extern void test_BTS_Get_Message_Control1_Device_Fan(void);
+extern void test_BTS_Get_Message_Control1_Device_Conditioner(void);
+extern void test_BTS_Get_Message_Control2_Device_Lamp(void);
+extern void test_BTS_Get_Message_Control2_Device_Fan(void);
+extern void test_BTS_Get_Message_Control2_Device_Conditioner(void);
 
 
 /*=======Mock Management=====*/
@@ -75,7 +80,12 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_bts_get_message.c");
-  run_test(test_bts_get_message_NeedToImplement, "test_bts_get_message_NeedToImplement", 15);
+  run_test(test_BTS_Get_Message_Control1_Device_Lamp, "test_BTS_Get_Message_Control1_Device_Lamp", 14);
+  run_test(test_BTS_Get_Message_Control1_Device_Fan, "test_BTS_Get_Message_Control1_Device_Fan", 48);
+  run_test(test_BTS_Get_Message_Control1_Device_Conditioner, "test_BTS_Get_Message_Control1_Device_Conditioner", 79);
+  run_test(test_BTS_Get_Message_Control2_Device_Lamp, "test_BTS_Get_Message_Control2_Device_Lamp", 109);
+  run_test(test_BTS_Get_Message_Control2_Device_Fan, "test_BTS_Get_Message_Control2_Device_Fan", 140);
+  run_test(test_BTS_Get_Message_Control2_Device_Conditioner, "test_BTS_Get_Message_Control2_Device_Conditioner", 171);
 
   return UnityEnd();
 }

@@ -12,6 +12,9 @@ void tearDown(void)
 
 void test_BTS_Convert_Float_To_Bytes(void)
 {
+
+    printf("\n\n--------------------(Start TEST bts_convert)--------------------\n\n");
+
     float data_in = 1.67;
     uint8_t data_test[4] = {0x8f, 0xc2, 0xd5, 0x3f};
     printf("\n-----------Convert Float To Bytes--------\n");
@@ -95,4 +98,7 @@ void test_BTS_Convert_Bytes_To_Uint16(void)
     TEST_ASSERT_EQUAL_FLOAT(data_test, data_out);
     printf("Data convert: %d ", data_out);
     printf("\n----------------Convert Done--------------\n");
+
+    printf("\n\n--------------------(End TEST bts_convert)--------------------\n\n");
+
 }

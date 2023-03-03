@@ -6,6 +6,7 @@ extern "C"{
 #endif
 
 #include <stdio.h>
+#include <stdint.h>
 #include "bts_convert.h"
 #include "bts_frame_message.h"
 #include "bts_get_message.h"
