@@ -20,14 +20,14 @@ void Sensor_NTC_Init(void)
  */
 uint8_t Sensor_NTC_Get(void)
 {	
-//	uint16_t adc_kalman;
-//	float temperature_NTC1, temperature_NTC2;
-//	adc_software_trigger_enable(ADC1, ADC_INSERTED_CHANNEL);
-//	adc_kalman = ADC_Kalman_Filter(ADC_IDATA0(ADC1), &Kalman_NTC1);
-//	temperature_NTC1 = convert_NTC_Analog_to_Temperature2(ADC_IDATA0(ADC1));
-//	
-//	adc_kalman = ADC_Kalman_Filter(ADC_IDATA1(ADC1), &Kalman_NTC2);
-//	temperature_NTC2 = convert_NTC_Analog_to_Temperature1(ADC_IDATA1(ADC1));
+	uint16_t adc_kalman;
+	float temperature_NTC1, temperature_NTC2;
+	adc_software_trigger_enable(ADC1, ADC_INSERTED_CHANNEL);
+	adc_kalman = ADC_Kalman_Filter(ADC_IDATA0(ADC1), &Kalman_NTC1);
+	temperature_NTC1 = convert_NTC_Analog_to_Temperature2(ADC_IDATA0(ADC1));
+	
+	adc_kalman = ADC_Kalman_Filter(ADC_IDATA1(ADC1), &Kalman_NTC2);
+	temperature_NTC2 = convert_NTC_Analog_to_Temperature1(ADC_IDATA1(ADC1));
 
 #if DEBUG_ALL
 	BTS_Sys_Debug("NTC 1: %d C\r\n", (int)(temperature_NTC1 * 100));

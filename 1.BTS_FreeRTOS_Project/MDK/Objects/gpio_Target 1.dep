@@ -46,7 +46,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -107,7 +107,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -168,7 +168,7 @@ I (..\USER\bts_uart.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -229,7 +229,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -245,7 +245,7 @@ I (..\USER\bts_sensor_door.h)(0x63F6E1D8)
 I (..\USER\bts_sensor_ntc.h)(0x63F6E1D8)
 I (..\USER\bts_sensor_water.h)(0x63F6E1D8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x60253186)
-F (..\USER\bts_task_io.c)(0x6402AC71)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_task_io.o --omf_browse .\objects\bts_task_io.crf --depend .\objects\bts_task_io.d)
+F (..\USER\bts_task_io.c)(0x6402FD85)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_task_io.o --omf_browse .\objects\bts_task_io.crf --depend .\objects\bts_task_io.d)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_sys.h)(0x64016F44)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
@@ -291,7 +291,7 @@ I (..\USER\bts_uart.h)(0x63F6E1D8)
 I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -352,7 +352,7 @@ I (..\USER\bts_uart.h)(0x63F6E1D8)
 I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -413,7 +413,7 @@ I (..\USER\bts_uart.h)(0x63F6E1D8)
 I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -475,7 +475,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -536,7 +536,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -554,7 +554,7 @@ F (..\USER\bts_convert.c)(0x63F8329C)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=int
 I (..\USER\bts_convert.h)(0x64000EE0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60253184)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
-F (..\USER\bts_config_gpio.c)(0x6402AEBF)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_config_gpio.o --omf_browse .\objects\bts_config_gpio.crf --depend .\objects\bts_config_gpio.d)
+F (..\USER\bts_config_gpio.c)(0x6402FD65)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_config_gpio.o --omf_browse .\objects\bts_config_gpio.crf --depend .\objects\bts_config_gpio.d)
 I (..\USER\bts_config_gpio.h)(0x64000E8F)
 I (..\USER\bts_sys.h)(0x64016F44)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
@@ -601,7 +601,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -615,8 +615,8 @@ I (..\USER\bts_sensor_smoke.h)(0x63F6E1D8)
 I (..\USER\bts_sensor_door.h)(0x63F6E1D8)
 I (..\USER\bts_sensor_ntc.h)(0x63F6E1D8)
 I (..\USER\bts_sensor_water.h)(0x63F6E1D8)
-F (..\USER\bts_adc.c)(0x6402B008)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_adc.o --omf_browse .\objects\bts_adc.crf --depend .\objects\bts_adc.d)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+F (..\USER\bts_adc.c)(0x6402FD65)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_adc.o --omf_browse .\objects\bts_adc.crf --depend .\objects\bts_adc.d)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_sys.h)(0x64016F44)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
@@ -695,7 +695,7 @@ F (..\USER\bts_sensor_smoke.h)(0x63F6E1D8)()
 F (..\USER\bts_sensor_water.h)(0x63F6E1D8)()
 F (..\USER\bts_automatic_control.h)(0x63F6E1D8)()
 F (..\USER\bts_device.h)(0x63F6E1D8)()
-F (..\USER\bts_adc.h)(0x6402A3E9)()
+F (..\USER\bts_adc.h)(0x6402FD65)()
 F (..\USER\bts_convert.h)(0x64000EE0)()
 F (..\USER\bts_sensor_airconditioner.c)(0x63F83294)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_sensor_airconditioner_1.o --omf_browse .\objects\bts_sensor_airconditioner_1.crf --depend .\objects\bts_sensor_airconditioner_1.d)
 I (..\USER\bts_sensor_airconditioner.h)(0x63F6E1D8)
@@ -744,7 +744,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -805,7 +805,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -819,7 +819,7 @@ I (..\USER\bts_sensor_airconditioner.h)(0x63F6E1D8)
 I (..\USER\bts_sensor_smoke.h)(0x63F6E1D8)
 I (..\USER\bts_sensor_ntc.h)(0x63F6E1D8)
 I (..\USER\bts_sensor_water.h)(0x63F6E1D8)
-F (..\USER\bts_sensor_ntc.c)(0x6402ED88)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_sensor_ntc_1.o --omf_browse .\objects\bts_sensor_ntc_1.crf --depend .\objects\bts_sensor_ntc_1.d)
+F (..\USER\bts_sensor_ntc.c)(0x6402FD85)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Template-IC:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Utilities-D__UVISION_VERSION="536" -D_RTE_ -DGD32F30X_HD -D_RTE_-o .\objects\bts_sensor_ntc_1.o --omf_browse .\objects\bts_sensor_ntc_1.crf --depend .\objects\bts_sensor_ntc_1.d)
 I (..\USER\bts_sensor_ntc.h)(0x63F6E1D8)
 I (..\USER\bts_sys.h)(0x64016F44)
 I (C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Include\gd32f30x.h)(0x5BC698DA)
@@ -866,7 +866,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -927,7 +927,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -988,7 +988,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -1049,7 +1049,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)
@@ -1110,7 +1110,7 @@ I (..\USER\bts_uart3.h)(0x63F6E1D8)
 I (..\USER\bts_task_io.h)(0x63F6E1D8)
 I (..\USER\bts_task_sys.h)(0x63E7341C)
 I (..\USER\bts_task_msg_transmission.h)(0x6400104D)
-I (..\USER\bts_adc.h)(0x6402A3E9)
+I (..\USER\bts_adc.h)(0x6402FD65)
 I (..\USER\bts_event_define.h)(0x63F6E1D8)
 I (..\USER\bts_mutex_define.h)(0x63F6E1D8)
 I (..\USER\bts_queue_define.h)(0x63F6E1D8)

@@ -30,7 +30,7 @@ void BTS_RTOS_Task_IO(void *p)
 			BTS_Sys_Debug("\nSmoke Warning\n");
 		}
 #if TEST_NTC 
-		if(counter_get_NTC == 2000)
+		if(counter_get_NTC == 200)
 		{
 			counter_get_NTC = 0;
 			Sensor_NTC_Get();
@@ -52,37 +52,40 @@ static void GetQueue_UartToIo(void)
 	controlDeviceFrame_t data_frame;
 	if(xQueueReceive(QueueTask.Uart.To_Io.Queue_Device, (void *)&data_frame, TIME_WAIT_QUEUE))
 	{
-#if DEBUG_ALL
-		BTS_Sys_Debug("Name : %d - Value : %d\n",data_frame.name, data_frame.value);
-#endif
-		if(data_frame.value != 0)
+		if(data_frame.name <= SIZE_LIST_DEVICE && data_frame.name > 0)
 		{
-			if(BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].on))
-			{
 #if DEBUG_ALL
-				BTS_Sys_Debug("Control success");
+			BTS_Sys_Debug("Name : %d - Value : %d\n",data_frame.name, data_frame.value);
+#endif
+			if(data_frame.value != 0)
+			{
+				if(BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].on))
+				{
+#if DEBUG_ALL
+					BTS_Sys_Debug("Control success");
 #endif	
+				}
+				else
+				{
+#if DEBUG_ALL
+					BTS_Sys_Debug("Control error");
+#endif	
+				}
 			}
 			else
 			{
+				if(BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].off))
+				{
 #if DEBUG_ALL
-				BTS_Sys_Debug("Control error");
-#endif	
-			}
-		}
-		else
-		{
-			if(BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].off))
-			{
-#if DEBUG_ALL
-				BTS_Sys_Debug("Control success");
+					BTS_Sys_Debug("Control success");
 #endif
-			}
-			else
-			{
+				}
+				else
+				{
 #if DEBUG_ALL
-				BTS_Sys_Debug("Control error");
+					BTS_Sys_Debug("Control error");
 #endif
+				}
 			}
 		}
 	}
