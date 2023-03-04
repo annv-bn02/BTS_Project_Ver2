@@ -35,17 +35,15 @@ Note: source file '..\USER\bts_sensor_water.c' - object file renamed from '.\Obj
 Note: source file '..\USER\bts_automatic_control.c' - object file renamed from '.\Objects\bts_automatic_control.o' to '.\Objects\bts_automatic_control_1.o'.
 Note: source file '..\USER\bts_device.c' - object file renamed from '.\Objects\bts_device.o' to '.\Objects\bts_device_1.o'.
 compiling bts_sensor_ntc.c...
-..\USER\bts_sensor_ntc.c(23): warning:  #550-D: variable "adc_kalman"  was set but never used
-  	uint16_t adc_kalman;
-..\USER\bts_sensor_ntc.c(24): warning:  #550-D: variable "temperature_NTC1"  was set but never used
-  	float temperature_NTC1, temperature_NTC2;
-..\USER\bts_sensor_ntc.c(24): warning:  #550-D: variable "temperature_NTC2"  was set but never used
-  	float temperature_NTC1, temperature_NTC2;
-..\USER\bts_sensor_ntc.c: 3 warnings, 0 errors
+..\USER\bts_sensor_ntc.c(46): warning:  #177-D: function "convert_NTC_Analog_to_Temperature1"  was declared but never referenced
+  static float convert_NTC_Analog_to_Temperature1(uint16_t adc_value)
+..\USER\bts_sensor_ntc.c(62): warning:  #177-D: function "convert_NTC_Analog_to_Temperature2"  was declared but never referenced
+  static float convert_NTC_Analog_to_Temperature2(uint16_t adc_value)
+..\USER\bts_sensor_ntc.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=24654 RO-data=766 RW-data=380 ZI-data=14076  
+Program Size: Code=21088 RO-data=704 RW-data=380 ZI-data=14012  
 FromELF: creating hex file...
-".\Objects\gpio.axf" - 0 Error(s), 3 Warning(s).
+".\Objects\gpio.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
