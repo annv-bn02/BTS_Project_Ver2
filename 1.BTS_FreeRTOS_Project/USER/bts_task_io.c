@@ -30,7 +30,7 @@ void BTS_RTOS_Task_IO(void *p)
 			BTS_Sys_Debug("\nSmoke Warning\n");
 		}
 #if TEST_NTC 
-		if(counter_get_NTC == 200)
+		if(counter_get_NTC == 2000)
 		{
 			counter_get_NTC = 0;
 			Sensor_NTC_Get();
