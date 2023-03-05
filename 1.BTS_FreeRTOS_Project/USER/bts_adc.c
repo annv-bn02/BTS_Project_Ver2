@@ -28,9 +28,9 @@ void BTS_ADC_NTC_Init(void)
 
   
     /* ADC temperature sensor channel config */
-    adc_inserted_channel_config(ADC1, 0, ADC_CHANNEL_10, ADC_SAMPLETIME_239POINT5);
+    adc_inserted_channel_config(ADC1, 0, ADC_CHANNEL_0, ADC_SAMPLETIME_239POINT5);
     /* ADC internal reference voltage channel config */
-    adc_inserted_channel_config(ADC1, 1, ADC_CHANNEL_11, ADC_SAMPLETIME_239POINT5);
+    adc_inserted_channel_config(ADC1, 1, ADC_CHANNEL_1, ADC_SAMPLETIME_239POINT5);
 
     adc_external_trigger_config(ADC1, ADC_INSERTED_CHANNEL, ENABLE);
   

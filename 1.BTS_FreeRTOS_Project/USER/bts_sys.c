@@ -111,6 +111,16 @@ void BTS_Sys_Debug(const char *format, ...)
 }
 
 /**
+ * @brief Send error debug to the debug screen.
+ * 
+ * @param error : name of error.
+ */
+void BTS_Debug_Error(uint8_t* error)
+{
+	BTS_Sys_Debug("----------------(Error: %s )--------------", error);
+}
+
+/**
  * @brief Send char to the screen debug.
  * 
  * @param data : char to send.

@@ -18,24 +18,13 @@ void BTS_RTOS_Task_IO(void *p)
 {
 	EventBits_t event;
 	uint16_t counter_send = 0;
-	uint16_t counter_get_NTC = 0;
 	BTS_Device_Init();
 	Sensor_Smoke_Init();
 	Sensor_NTC_Init();
 	while(1)
 	{	
-		counter_get_NTC++;
-		if(Sensor_Smoke_Get() == 1)
-		{
-			BTS_Sys_Debug("\nSmoke Warning\n");
-		}
-#if TEST_NTC 
-		if(counter_get_NTC == 200)
-		{
-			counter_get_NTC = 0;
-			Sensor_NTC_Get();
-		}
-#endif
+		Sensor_Smoke_Get();
+		Sensor_NTC_Get();
 		counter_send++;
 		Counter_Send_Data(&counter_send);
 		GetEventControl_SysToIo(event);
@@ -59,34 +48,18 @@ static void GetQueue_UartToIo(void)
 #endif
 			if(data_frame.value != 0)
 			{
-				if(BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].on))
-				{
-#if DEBUG_ALL
-					BTS_Sys_Debug("Control success");
-#endif	
-				}
-				else
-				{
-#if DEBUG_ALL
-					BTS_Sys_Debug("Control error");
-#endif	
-				}
+				BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].on);
 			}
 			else
 			{
-				if(BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].off))
-				{
-#if DEBUG_ALL
-					BTS_Sys_Debug("Control success");
-#endif
-				}
-				else
-				{
-#if DEBUG_ALL
-					BTS_Sys_Debug("Control error");
-#endif
-				}
+				BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].off);
 			}
+		}
+		else
+		{
+#if DEBUG_ERROR
+            BTS_Debug_Error("Control undefined device");   
+#endif
 		}
 	}
 }
@@ -145,10 +118,15 @@ static void SendQueueSensor_IoToUart(void)
 	uint8_t count = 0;
 	float array_data_sensor[DEFAULT_MAX_NUMBER_SENSOR];
 	updateSensorFrame_t frame_update_sensor;
+
 	for(count = 0; count < DEFAULT_MAX_NUMBER_SENSOR; count++)
 	{
 		array_data_sensor[count] = 25.5 + count;
 	}
+	
+	array_data_sensor[SENSOR_NTC1]  = temperature_NTC1;
+	array_data_sensor[SENSOR_NTC2]  = temperature_NTC2;
+	array_data_sensor[SENSOR_SMOKE] = smoke_flag;
 	
 	for(count = 0; count < DEFAULT_MAX_NUMBER_SENSOR; count++)
 	{

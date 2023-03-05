@@ -7,8 +7,10 @@
 
 #include "bts_sys.h"
 
+extern float smoke_flag;
+
 void Sensor_Smoke_Init(void);
-uint8_t Sensor_Smoke_Get(void);
+void Sensor_Smoke_Get(void);
 
 #ifdef __cplusplus
 }

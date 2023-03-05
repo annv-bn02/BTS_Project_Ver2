@@ -51,8 +51,6 @@ extern volatile eventListValue_t EventTask;
 extern volatile mutexListValue_t MutexTask;
 extern volatile queueListValue_t QueueTask;
 
-#define DEBUG_ALL 0
-
 #define TIME_DELAY_TASK_MSG 	1
 #define TIME_DELAY_TASK_IO 		1
 #define TIME_DELAY_TASK_SYS 	1
@@ -61,15 +59,14 @@ extern volatile queueListValue_t QueueTask;
 #define TIME_WAIT_QUEUE			(portTickType)0
 
 #define COUNTER_UPDATE_DATA 		5000 	
-
 #define COUNTER_SMOKE_WARNING 		100 	
-
 #define COUNTER_TIMEOUT 	20 	
 
+#define DEBUG_ALL 0
 #define DEBUG_TASK_MSG_NEW_MESSAGE 0
 #define DEBUG_TASK_MSG_CREATE_MESSAGE_DEVICE 0
 #define DEBUG_TASK_MSG_CREATE_MESSAGE_SENSOR 0
-
+#define DEBUG_ERROR 0
 
 
 void BTS_Sys_EventInit(void);
@@ -77,7 +74,7 @@ void BTS_Sys_Init(void);
 
 void BTS_Sys_MutexInit(void);
 void BTS_Sys_QueueInit(void);
-	
+void BTS_Debug_Error(uint8_t* error);
 void BTS_Sys_Debug(const char *format, ...);
 
 #ifdef __cplusplus

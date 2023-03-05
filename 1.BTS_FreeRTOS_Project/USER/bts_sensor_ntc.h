@@ -8,8 +8,8 @@
 #include "bts_sys.h"
 
 void Sensor_NTC_Init(void);
-uint8_t Sensor_NTC_Get(void);
-
+void Sensor_NTC_Get(void);
+extern float temperature_NTC1, temperature_NTC2;
 #ifdef __cplusplus
 }
 #endif

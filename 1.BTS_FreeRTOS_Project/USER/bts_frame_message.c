@@ -142,6 +142,9 @@ int16_t DetectMessage(uint8_t *datain, messageFrameMsg_t *dataout)
     dataout->Start = Bts_Convert_From_Bytes_To_Uint16(datain[count_temp], datain[count_temp+1]);
     if(dataout->Start != START_BYTE)
     {
+#if DEBUG_ERROR
+        BTS_Debug_Error("Start frame");    
+#endif
         return RETRUN_ERROR;
     }
     count_temp += 2;
@@ -185,6 +188,9 @@ int16_t DetectMessage(uint8_t *datain, messageFrameMsg_t *dataout)
             }
         break;
         default:
+#if DEBUG_ERROR
+            BTS_Debug_Error("Type Message");    
+#endif
             return RETRUN_ERROR;
     }
     /*---------------------------------(Check Sum(2byte))---------------------------------*/
@@ -193,6 +199,9 @@ int16_t DetectMessage(uint8_t *datain, messageFrameMsg_t *dataout)
 
     if(check_sum != dataout->Crc)
     {
+#if DEBUG_ERROR
+        BTS_Debug_Error("Check sum");    
+#endif
         return RETRUN_ERROR;
     }
     count_temp += 2;
