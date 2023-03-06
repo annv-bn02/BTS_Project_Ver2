@@ -62,7 +62,7 @@ extern volatile queueListValue_t QueueTask;
 	TIME_DELAY_TASK_IO = TIME_DELAY_TASK_SYS + TIME_WAIT_EVENT_ALL(1 get event) = 1 + 9*1 = 10
 	TIME_UPDATE_DATA = (COUNTER_UPDATE_DATA * TIME_DELAY_TASK_IO) = (2000 * 10) = 20000 mS 
 */
-#define COUNTER_UPDATE_DATA 		2000 	
+#define COUNTER_UPDATE_DATA 		100 	
 
 /*
 				Time update data

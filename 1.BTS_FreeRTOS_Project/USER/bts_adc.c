@@ -1,11 +1,12 @@
 
 #include "bts_adc.h"
 
-#define BOARD_ADC_CHANNEL   ADC_CHANNEL_10
+#define BOARD_ADC_CHANNEL   ADC_CHANNEL_15
 #define ADC_GPIO_PORT_RCU   RCU_GPIOC
 #define ADC_GPIO_PORT       GPIOC
-#define ADC_GPIO_PIN        GPIO_PIN_0
+#define ADC_GPIO_PIN        GPIO_PIN_5
 
+_adc_kalman_filter_t_ Kalman_NTC;
 
 void BTS_ADC_Init(void)
 {
@@ -42,6 +43,40 @@ void BTS_ADC_Init(void)
 	adc_enable(ADC1);
 	/* ADC calibration and reset calibration */
 	adc_calibration_enable(ADC1);
+}
+
+uint16_t ADC_Kalman_Filter(unsigned long ADC_Value, _adc_kalman_filter_t_ *_adc_kalman_)
+{
+		float x_k1_k1,x_k_k1;
+		uint16_t kalman_adc;
+	  float Z_k;
+		if(_adc_kalman_->init_data == 0)
+		{
+			_adc_kalman_->ADC_OLD_Value = 0.0;
+			_adc_kalman_->P_k1_k1 = 0.0;
+			_adc_kalman_->kalman_adc_old=0;
+			_adc_kalman_->Q = 0.0001; //Q: Regulation noise, Q increases, dynamic response becomes faster, and convergence stability becomes worse
+			_adc_kalman_->R = 0.0005;    //R: Test noise, R increases, dynamic response becomes slower, convergence stability becomes better
+			_adc_kalman_->Kg = 0;
+			_adc_kalman_->P_k_k1 = 1;
+			_adc_kalman_->init_data = 1;
+		}
+		
+    Z_k = ADC_Value;
+    x_k1_k1 = _adc_kalman_->kalman_adc_old;
+
+    x_k_k1 = x_k1_k1;
+    _adc_kalman_->P_k_k1 = _adc_kalman_->P_k1_k1 + _adc_kalman_->Q;
+
+    _adc_kalman_->Kg = _adc_kalman_->P_k_k1/(_adc_kalman_->P_k_k1 + _adc_kalman_->R);
+
+    kalman_adc = x_k_k1 + _adc_kalman_->Kg * (Z_k - _adc_kalman_->kalman_adc_old);
+    _adc_kalman_->P_k1_k1 = (1 - _adc_kalman_->Kg)*_adc_kalman_->P_k_k1;
+    _adc_kalman_->P_k_k1 = _adc_kalman_->P_k1_k1;
+
+    _adc_kalman_->ADC_OLD_Value = ADC_Value;
+    _adc_kalman_->kalman_adc_old = kalman_adc;
+	return kalman_adc;
 }
 
 uint16_t BTS_ADC_Read(void)

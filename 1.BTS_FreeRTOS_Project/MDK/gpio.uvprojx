@@ -394,6 +394,11 @@
               <FilePath>..\USER\bts_uart.c</FilePath>
             </File>
             <File>
+              <FileName>bts_uart3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\bts_uart3.c</FilePath>
+            </File>
+            <File>
               <FileName>bts_sys.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USER\bts_sys.c</FilePath>
@@ -414,14 +419,9 @@
               <FilePath>..\USER\bts_task_sys.c</FilePath>
             </File>
             <File>
-              <FileName>bts_convert.c</FileName>
+              <FileName>bts_get_message.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\USER\bts_convert.c</FilePath>
-            </File>
-            <File>
-              <FileName>bts_uart3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\USER\bts_uart3.c</FilePath>
+              <FilePath>..\USER\bts_get_message.c</FilePath>
             </File>
             <File>
               <FileName>bts_frame_message.c</FileName>
@@ -429,9 +429,9 @@
               <FilePath>..\USER\bts_frame_message.c</FilePath>
             </File>
             <File>
-              <FileName>bts_get_message.c</FileName>
+              <FileName>bts_convert.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\USER\bts_get_message.c</FilePath>
+              <FilePath>..\USER\bts_convert.c</FilePath>
             </File>
             <File>
               <FileName>bts_config_gpio.c</FileName>
@@ -479,19 +479,14 @@
               <FilePath>..\USER\bts_event_define.h</FilePath>
             </File>
             <File>
-              <FileName>bts_uart.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\USER\bts_uart.h</FilePath>
-            </File>
-            <File>
-              <FileName>bts_convert.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\USER\bts_convert.h</FilePath>
-            </File>
-            <File>
               <FileName>bts_queue_define.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\USER\bts_queue_define.h</FilePath>
+            </File>
+            <File>
+              <FileName>bts_uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\USER\bts_uart.h</FilePath>
             </File>
             <File>
               <FileName>bts_uart3.h</FileName>
@@ -552,6 +547,11 @@
               <FileName>bts_adc.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\USER\bts_adc.h</FilePath>
+            </File>
+            <File>
+              <FileName>bts_convert.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\USER\bts_convert.h</FilePath>
             </File>
           </Files>
         </Group>

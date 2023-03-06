@@ -95,7 +95,7 @@ void BTS_Get_Message(uint8_t datain, uint8_t arr_message[])
 		case FSM_STATE_END:
 			arr_message[count_element_arr] = datain;
 			count_element_arr++;
-			if (count_element_arr == (data_after_length+6))
+			if (count_element_arr == (data_after_length + DEFAULT_BYTE))
 			{
 				flag_new_message = TRUE;
 				length_message = count_element_arr;
