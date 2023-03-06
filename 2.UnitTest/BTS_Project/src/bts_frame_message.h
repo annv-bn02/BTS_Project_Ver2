@@ -11,10 +11,10 @@
 
 #define RETRUN_ERROR -1
 
-/* Byte bắt đầu (mặc định) */
+/* Byte b?t d?u (m?c d?nh) */
 #define START_BYTE 0xAA55
 
-/* Độ dài mặc định không đổi [Start(2byte) + TypeMessage(2byte) + Length(2byte) = 6byte] */
+/* �? d�i m?c d?nh kh�ng d?i [Start(2byte) + TypeMessage(2byte) + Length(2byte) = 6byte] */
 #define DEFAULT_BYTE                            6 
 
 
@@ -74,18 +74,16 @@ typedef enum
     TYPE_MESSAGE_CONTROL_DEVICE 	= 0x0003,
 } typeMessageSensor_e;
 
+int16_t DetectMessage(uint8_t *dataint, messageFrameMsg_t *dataout);
+int16_t DebugMessage(uint8_t *dataint);
 
-    uint8_t* Bts_Convert_From_Float_To_Bytes(float data);
-
-    int16_t DetectMessage(uint8_t *dataint, messageFrameMsg_t *dataout);
-    int16_t DebugMessage(uint8_t *dataint);
-
-	int16_t BTS_Frame_Creat_Sensor(float *datain, uint8_t *dataout);
-	int16_t BTS_Frame_Creat_Device(uint8_t *datain, uint8_t *dataout);
-	int16_t BTS_Frame_Control_Device(uint8_t name, uint8_t value, uint8_t *dataout);
+int16_t BTS_Frame_Creat_Sensor(float *datain, uint8_t *dataout);
+int16_t BTS_Frame_Creat_Device(uint8_t *datain, uint8_t *dataout);
+int16_t BTS_Frame_Control_Device(uint8_t name, uint8_t value, uint8_t *dataout);
 	
 #ifdef __cplusplus
 }
 #endif
 
 #endif 
+

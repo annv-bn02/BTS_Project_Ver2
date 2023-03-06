@@ -53,18 +53,18 @@
 - "----------------Convert Done--------------"
 - ''
 - "-----------Convert Bytes To Float--------"
-- 'Data convert: 713.229980 '
+- 'Data convert: 1.670000 '
 - "----------------Convert Done--------------"
 - ''
 - "-----------Convert Bytes To Int--------"
-- 'Data convert: 20232030 '
+- 'Data convert: 30202023 '
 - "----------------Convert Done--------------"
 - ''
 - "-----------Convert Bytes To Uint16--------"
-- 'Data convert: 685 '
+- 'Data convert: 578 '
 - "----------------Convert Done--------------"
 - ''
 - ''
 - "--------------------(End TEST bts_convert)--------------------"
 - ''
-:time: 0.00896469999997862
+:time: 0.009679599999799393
