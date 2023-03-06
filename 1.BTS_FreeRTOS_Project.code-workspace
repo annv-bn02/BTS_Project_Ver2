@@ -1,7 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "2.UnitTest"
+			"path": "1.BTS_FreeRTOS_Project"
+		},
+		{
+			"path": "2.UnitTest/BTS_Project"
 		}
 	],
 	"settings": {

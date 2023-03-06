@@ -150,9 +150,9 @@ void test_BTS_Convert_Bytes_To_Float(void)
 
 {
 
-    float data_test = 713.23;
+    float data_test = 1.67;
 
-    uint8_t data_in[4] = {0x44, 0x32, 0x4e, 0xb8};
+    uint8_t data_in[4] = {0x3f, 0xd5, 0xc2, 0x8f};
 
     printf("\n-----------Convert Bytes To Float--------\n");
 
@@ -176,9 +176,9 @@ void test_BTS_Convert_Bytes_To_Int(void)
 
 {
 
-    int data_test = 20232030;
+    int data_test = 30202023;
 
-    uint8_t data_in[4] = {0x5e, 0xb7, 0x34, 0x01};
+    uint8_t data_in[4] = {0x01, 0xcc, 0xd8, 0xa7};
 
     printf("\n-----------Convert Bytes To Int--------\n");
 
@@ -202,9 +202,9 @@ void test_BTS_Convert_Bytes_To_Uint16(void)
 
 {
 
-    uint16_t data_test = 685;
+    uint16_t data_test = 578;
 
-    uint8_t data_in[2] = {0xad, 0x02};
+    uint8_t data_in[2] = {0x42, 0x02};
 
     printf("\n-----------Convert Bytes To Uint16--------\n");
 
