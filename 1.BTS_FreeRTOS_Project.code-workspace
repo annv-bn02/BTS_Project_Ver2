@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "1.BTS_FreeRTOS_Project"
+		},
+		{
+			"path": "2.UnitTest/BTS_Project"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdint.h": "c",
+			"bts_frame_message.h": "c",
+			"stdio.h": "c",
+			"typeinfo": "c"
+		}
+	}
+}

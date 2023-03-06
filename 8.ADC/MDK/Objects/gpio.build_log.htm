@@ -22,19 +22,16 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 F:\Project\1.BTS_Project\2.BTS_Project_Ver2\8.ADC\MDK\gpio.uvprojx
-Project File Date:  02/19/2023
+Project File Date:  02/27/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling bts_adc.c...
-..\USER\bts_adc.c(61): warning:  #940-D: missing return statement at end of non-void function "BTS_ADC_Read" 
-  }
-..\USER\bts_adc.c: 1 warning, 0 errors
+compiling main.c...
 linking...
-Program Size: Code=8128 RO-data=400 RW-data=20 ZI-data=2244  
+Program Size: Code=11736 RO-data=576 RW-data=20 ZI-data=2308  
 FromELF: creating hex file...
-".\Objects\gpio.axf" - 0 Error(s), 1 Warning(s).
+".\Objects\gpio.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,6 +47,7 @@ Package Vendor: GigaDevice
                 GigaDevice GD32F30x Series Device Support and Examples
    * Component: GD32F30x Version: 2.1.0
    * Component: ADC Version: 2.1.0
+   * Component: DMA Version: 2.1.0
    * Component: EXTI Version: 2.1.0
    * Component: FMC Version: 2.1.0
    * Component: GPIO Version: 2.1.0
@@ -78,8 +76,12 @@ Package Vendor: GigaDevice
       Source file:   Device\Utilities\gd32f30x_eval.c
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:ADC:2.1.0
-      Source file:   Device\Firmware\Peripherals\src\gd32f30x_adc.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_adc.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_adc.c
+
+   * Component: GigaDevice::Device:GD32F30x_StdPeripherals:DMA:2.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_dma.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_dma.c
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:EXTI:2.1.0
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_exti.h
@@ -90,8 +92,8 @@ Package Vendor: GigaDevice
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_fmc.h
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:GPIO:2.1.0
-      Source file:   Device\Firmware\Peripherals\src\gd32f30x_gpio.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f30x_gpio.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_gpio.c
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:MISC:2.1.0
       Source file:   Device\Firmware\Peripherals\src\gd32f30x_misc.c
@@ -110,17 +112,17 @@ Package Vendor: GigaDevice
       Source file:   Device\Firmware\Peripherals\src\gd32f30x_timer.c
 
    * Component: GigaDevice::Device:GD32F30x_StdPeripherals:USART:2.1.0
-      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_usart.h
       Source file:   Device\Firmware\Peripherals\src\gd32f30x_usart.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_usart.h
 
    * Component: GigaDevice::Device:GD32F30x_libopt:2.1.0
       Include file:  Device\Template\gd32f30x_libopt.h
 
    * Component: GigaDevice::Device:Startup:2.1.0
       Source file:   Device\Source\system_gd32f30x.c
-      Source file:   Device\Source\ARM\startup_gd32f30x_hd.s
       Include file:  Device\Include\gd32f30x.h
-Build Time Elapsed:  00:00:00
+      Source file:   Device\Source\ARM\startup_gd32f30x_hd.s
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
