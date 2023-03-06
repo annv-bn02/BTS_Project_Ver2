@@ -18,6 +18,11 @@ static void CreateMessageUpdateSensorTest(void);
 
 uint32_t counter_control = 0;
 
+/**
+ * @brief Transmission task funtion of RTOS system
+ * 
+ * @param p 
+ */
 void BTS_RTOS_Task_Msg(void *p)
 {
 	EventBits_t event;
@@ -42,6 +47,10 @@ void BTS_RTOS_Task_Msg(void *p)
 	}
 }
 
+/**
+ * @brief Get the New Message control device
+ * When the new message control device come, detect it and send name device and value of device to IO Task.
+ */
 static void GetNewMessage(void)
 {
 	uint16_t lenght = 0;
@@ -70,11 +79,16 @@ static void GetNewMessage(void)
 	Time_Out_Get_Message();
 }
 
+/**
+ * @brief Get the data of devices for update from IO Task
+ * When the data devices come, creat frame array bytes of data and send it.
+ */
 static void GetQueueDevice_IoToUart(void)
 {
 	uint8_t count = 0, size_data = 0;
 	uint8_t array_data_update_device[DEFAULT_MAX_NUMBER_DEVICE], array_data_out[50];
 	updateDeviceFrame_t frame_update_device;
+	xSemaphoreTake(MutexTask.UART.Lock_Queue, portMAX_DELAY);
 	if(xQueueReceive(QueueTask.IO.To_Uart.Queue_Device, (void *)&frame_update_device, TIME_WAIT_QUEUE))
 	{
 		for(count = 0; count < DEFAULT_MAX_NUMBER_DEVICE; count++)
@@ -87,14 +101,20 @@ static void GetQueueDevice_IoToUart(void)
 #endif
 		SmartBTS_USART3_SendArrayByte(array_data_out, size_data);
 	}
+	xSemaphoreGive(MutexTask.UART.Lock_Queue);
 }
 
+/**
+ * @brief Get the data of sensors for update from IO Task
+ * When the data sensors come, creat frame array bytes of data and send it.
+ */
 static void GetQueueSensor_IoToUart(void)
 {
 	uint8_t count = 0, size_data = 0;
 	uint8_t array_data_out[50];
 	float array_data_update_sensor[DEFAULT_MAX_NUMBER_SENSOR];
 	updateSensorFrame_t frame_update_sensor;
+	xSemaphoreTake(MutexTask.UART.Lock_Queue, portMAX_DELAY);
 	if(xQueueReceive(QueueTask.IO.To_Uart.Queue_Device, (void *)&frame_update_sensor, TIME_WAIT_QUEUE))
 	{
 		for(count = 0; count < DEFAULT_MAX_NUMBER_SENSOR; count++)
@@ -107,42 +127,67 @@ static void GetQueueSensor_IoToUart(void)
 #endif
 		SmartBTS_USART3_SendArrayByte(array_data_out, size_data);
 	}
+	xSemaphoreGive(MutexTask.UART.Lock_Queue);
 }
 
+/**
+ * @brief Send event control device to sys task.
+ * 
+ */
 static void SendEventControl_UartToSys(void)
 {
 	xEventGroupSetBits(EventTask.Uart.To_Sys.EventGroup, EventTask.Uart.To_Sys.EventBit_FlagHasData);	
 	
 }
 
+/**
+ * @brief Get event update data of device and sensor from sys task.
+ * 
+ */
 static void GetEventUpdate_SysToUart(EventBits_t event)
 {
 	//If UART has event from SYS, end event progress;
 	event = xEventGroupWaitBits(EventTask.Sys.To_Uart.EventGroup, EventTask.Sys.To_Uart.EventBit_FlagHasDataUpdate, pdTRUE, pdFALSE, TIME_WAIT_EVENT_ALL);
 	if(event & EventTask.Sys.To_Uart.EventBit_FlagHasDataUpdate)
 	{
-		BTS_Sys_Debug("Update Data\n");
+#if DEBUG_ALL
+		BTS_Sys_Debug("Update\n");
+#endif	
 		GetQueueDevice_IoToUart();
 		GetQueueSensor_IoToUart();
+#if DEBUG_ALL
 		BTS_Sys_Debug("End Update\n\n");
-		
+#endif	
 	}
 }
 
+/**
+ * @brief Get event control data of device and sensor from sys task.
+ * 
+ */
 static void GetEventControl_SysToUart(EventBits_t event)
 {
 	//If UART has event from SYS, end event progress;
 	event = xEventGroupWaitBits(EventTask.Sys.To_Uart.EventGroup, EventTask.Sys.To_Uart.EventBit_FlagHasData, pdTRUE, pdFALSE, TIME_WAIT_EVENT_ALL);
 	if(event & EventTask.Sys.To_Uart.EventBit_FlagHasData)
 	{
+#if DEBUG_ALL
 		BTS_Sys_Debug("Event Control SYSTEM to UART done\n");
+#endif
 //		GetQueueDevice_IoToUart();
 //		GetQueueSensor_IoToUart();
 		counter_control++;
-		BTS_Sys_Debug("\nCounter Control Message: %d\n", counter_control);
+#if DEBUG_ALL
 		BTS_Sys_Debug("End test\n\n");
+#endif
 	}
 }
+/**
+ * @brief Send name device and value control to IO task
+ * 
+ * @param name : name of device
+ * @param value : value control device
+ */
 
 static void SendQueue_UartToIO(const uint8_t name, const uint8_t value)
 {
@@ -154,6 +199,12 @@ static void SendQueue_UartToIO(const uint8_t name, const uint8_t value)
 	xSemaphoreGive(MutexTask.UART.Lock_Queue);
 }
 
+/**
+ * @brief Create a Control Device Test object
+ * Test object is used to create a control device message.
+ * @param name : name of device
+ * @param value : value control device
+ */
 static void CreateControlDeviceTest(const uint8_t name, const uint8_t value)
 {
 	uint8_t array_control[50];
@@ -175,6 +226,10 @@ static void CreateControlDeviceTest(const uint8_t name, const uint8_t value)
 	BTS_Sys_Debug("---------------(Done)---------------\n");
 }
 
+/**
+ * @brief Create a Message Update Device Test object
+ * Test object is used to create a update device message.
+ */
 static void CreateMessageUpdateDeviceTest(void)
 {
 	uint8_t array_data_in[DEFAULT_MAX_NUMBER_DEVICE], array_data_out[50];
@@ -201,6 +256,10 @@ static void CreateMessageUpdateDeviceTest(void)
 	BTS_Sys_Debug("---------------(Done)---------------\n");
 }
 
+/**
+ * @brief Create a Message Update Sensor Test object
+ * Test object is used to create a update sensor message.
+ */
 static void CreateMessageUpdateSensorTest(void)
 {
 	uint8_t array_data_out[50];

@@ -1,15 +1,19 @@
 #include "bts_task_io.h"
 
-#define TEST_UPDATE 1
-#define TEST_NTC 0
+#define TEST_NTC 1
 static void GetQueue_UartToIo(void);
-static void SendEventUpdate_SysToIo(void);
-static void SendEventControl_SysToIo(void);
+static void SendEventUpdate_IoToSys(void);
+static void SendEventControl_IoToSys(void);
 static void SendQueueDevice_IoToUart(void);
 static void SendQueueSensor_IoToUart(void);
 static void Counter_Send_Data(uint16_t *counter);
 static void GetEventControl_SysToIo(EventBits_t event);
 
+/**
+ * @brief IO Task funtion of RTOS system
+ * 
+ * @param p 
+ */
 void BTS_RTOS_Task_IO(void *p)
 {
 	EventBits_t event;
@@ -32,60 +36,84 @@ void BTS_RTOS_Task_IO(void *p)
 			Sensor_NTC_Get();
 		}
 #endif
-#if TEST_UPDATE
 		counter_send++;
 		Counter_Send_Data(&counter_send);
-#endif
 		GetEventControl_SysToIo(event);
 		vTaskDelay(TIME_DELAY_TASK_IO);
 	}
 }
 
+/**
+ * @brief When receive data control device, control device
+ * 
+ */
 static void GetQueue_UartToIo(void)
 {
 	controlDeviceFrame_t data_frame;
 	if(xQueueReceive(QueueTask.Uart.To_Io.Queue_Device, (void *)&data_frame, TIME_WAIT_QUEUE))
 	{
+#if DEBUG_ALL
 		BTS_Sys_Debug("Name : %d - Value : %d\n",data_frame.name, data_frame.value);
+#endif
 		if(data_frame.value != 0)
 		{
 			if(BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].on))
 			{
+#if DEBUG_ALL
 				BTS_Sys_Debug("Control success");
+#endif	
 			}
 			else
 			{
+#if DEBUG_ALL
 				BTS_Sys_Debug("Control error");
+#endif	
 			}
 		}
 		else
 		{
 			if(BTS_Device_Control(data_frame.name - 1, device_status[data_frame.name - 1].off))
 			{
+#if DEBUG_ALL
 				BTS_Sys_Debug("Control success");
+#endif
 			}
 			else
 			{
+#if DEBUG_ALL
 				BTS_Sys_Debug("Control error");
+#endif
 			}
 		}
 	}
 }
 
-static void SendEventUpdate_SysToIo(void)
+/**
+ * @brief Send event update data of device and sensor to sys task
+ * 
+ */
+static void SendEventUpdate_IoToSys(void)
 {
 	xEventGroupSetBits(EventTask.IO.To_Sys.EventGroup, EventTask.IO.To_Sys.EventBit_FlagHasDataUpdate);
 	SendQueueDevice_IoToUart();
 	SendQueueSensor_IoToUart();
 }
 
-static void SendEventControl_SysToIo(void)
+/**
+ * @brief Send event control data of device and sensor to sys task
+ * 
+ */
+static void SendEventControl_IoToSys(void)
 {
 	xEventGroupSetBits(EventTask.IO.To_Sys.EventGroup, EventTask.IO.To_Sys.EventBit_FlagHasData);
 	SendQueueDevice_IoToUart();
 	SendQueueSensor_IoToUart();
 }
 
+/**
+ * @brief Send data of device to transmission task
+ * 
+ */
 static void SendQueueDevice_IoToUart(void)
 {
 	uint8_t count = 0;
@@ -105,6 +133,10 @@ static void SendQueueDevice_IoToUart(void)
 	xSemaphoreGive(MutexTask.IO.Lock_Queue);
 }
 
+/**
+ * @brief Send data of sensor to transmission task
+ * 
+ */
 static void SendQueueSensor_IoToUart(void)
 {
 	uint8_t count = 0;
@@ -124,23 +156,35 @@ static void SendQueueSensor_IoToUart(void)
 	xSemaphoreGive(MutexTask.IO.Lock_Queue);
 }
 
+/**
+ * @brief Counter for automatic update data of device and sensor
+ * 
+ */
 static void Counter_Send_Data(uint16_t *counter)
 {
 	if(*counter == COUNTER_UPDATE_DATA)
 	{
-		SendEventUpdate_SysToIo();
+		SendEventUpdate_IoToSys();
 		*counter = 0;
 	}
 }
 
+/**
+ * @brief Get event control device from sys task
+ * 
+ * @param event 
+ */
 static void GetEventControl_SysToIo(EventBits_t event)
 {
 	//If IO has event from SYS, IO sends event to SYS  
 	event = xEventGroupWaitBits(EventTask.Sys.To_IO.EventGroup, EventTask.Sys.To_IO.EventBit_FlagHasData, pdTRUE, pdFALSE, TIME_WAIT_EVENT_ALL);
 	if(event & EventTask.Sys.To_IO.EventBit_FlagHasData)
 	{
+#if DEBUG_ALL
 		BTS_Sys_Debug("Event Control SYSTEM to IO done\n");
+#endif
 		GetQueue_UartToIo();
-		SendEventControl_SysToIo();
+		SendEventControl_IoToSys();
 	}
+	
 }

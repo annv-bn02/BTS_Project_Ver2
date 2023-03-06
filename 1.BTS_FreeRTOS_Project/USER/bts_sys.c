@@ -48,12 +48,7 @@ void BTS_Sys_QueueInit(void)
 {
 
 	QueueTask.Uart.To_Io.Queue_Device = xQueueCreate(10, sizeof(controlDeviceFrame_t));
-//	QueueTask.Uart.To_Sys.Queue_Device = xQueueCreate(10, sizeof(uint8_t));
-
-//	QueueTask.Sys.To_Uart.Queue_Device = xQueueCreate(10, sizeof(uint8_t));
-	
 	QueueTask.IO.To_Uart.Queue_Device = xQueueCreate(10, sizeof(updateDeviceFrame_t));
-//	QueueTask.IO.To_Sys.Queue_Device = xQueueCreate(10, sizeof(uint8_t));
 }
 
 /**
@@ -67,6 +62,12 @@ void BTS_Sys_Init(void)
 	BTS_Sys_QueueInit();
 }
 
+/**
+ * @brief Send data debug to the debug screen.
+ * same as printf() function in c language.
+ * @param format : array format of data debug
+ * @param ... 
+ */
 void BTS_Sys_Debug(const char *format, ...) 
 {
 	char arr[20];
@@ -109,6 +110,11 @@ void BTS_Sys_Debug(const char *format, ...)
 	va_end(args);
 }
 
+/**
+ * @brief Send char to the screen debug.
+ * 
+ * @param data : char to send.
+ */
 void BTS_Sys_SendChar(char data)
 {
 	xSemaphoreTake(MutexTask.SYS.Lock_SendChar, portMAX_DELAY);
@@ -116,6 +122,11 @@ void BTS_Sys_SendChar(char data)
 	xSemaphoreGive(MutexTask.SYS.Lock_SendChar);
 }
 
+/**
+ * @brief Send string to the screen debug.
+ * 
+ * @param text : array of chars to send.
+ */
 void BTS_Sys_SendString(char *text)
 {
 	while(*text)

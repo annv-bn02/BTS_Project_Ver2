@@ -1,24 +1,18 @@
 
 #include "bts_adc.h"
-
-#define BOARD_ADC_CHANNEL   ADC_CHANNEL_15
-#define ADC_GPIO_PORT_RCU   RCU_GPIOC
-#define ADC_GPIO_PORT       GPIOC
-#define ADC_GPIO_PIN        GPIO_PIN_5
-
 _adc_kalman_filter_t_ Kalman_NTC;
 
-void BTS_ADC_Init(void)
+/**
+ * @brief Confiure the adc channel for read NTC analog data voltage
+ * 
+ * @param gpio_element : the position of the gpio element in the structure gpio_pin_sensor
+ */
+void BTS_ADC_NTC_Init(uint8_t gpio_element)
 {
-	/* enable GPIOA clock */
-	rcu_periph_clock_enable(ADC_GPIO_PORT_RCU);
 	/* enable ADC1 clock */
 	rcu_periph_clock_enable(RCU_ADC1);
 	/* config ADC clock */
-	rcu_adc_clock_config(RCU_CKADC_CKAPB2_DIV4);
-	/* config the GPIO as analog mode */
-	gpio_init(ADC_GPIO_PORT, GPIO_MODE_AIN, GPIO_OSPEED_MAX, ADC_GPIO_PIN);
-	
+	rcu_adc_clock_config(RCU_CKADC_CKAPB2_DIV4);	
  /* ADC continuous function enable */
 	adc_special_function_config(ADC1, ADC_SCAN_MODE, ENABLE);
 	adc_special_function_config(ADC1, ADC_CONTINUOUS_MODE, DISABLE);    
@@ -32,7 +26,7 @@ void BTS_ADC_Init(void)
 	adc_channel_length_config(ADC1, ADC_REGULAR_CHANNEL, 1);
 
 	/* ADC regular channel config */
-	adc_regular_channel_config(ADC1, 0, BOARD_ADC_CHANNEL, ADC_SAMPLETIME_55POINT5);
+	adc_regular_channel_config(ADC1, 0, gpio_pin_sensor[gpio_element].adc_channel, ADC_SAMPLETIME_55POINT5);
 	adc_external_trigger_config(ADC1, ADC_REGULAR_CHANNEL, ENABLE);
 
 	/* ADC resolusion 6B */
@@ -45,6 +39,13 @@ void BTS_ADC_Init(void)
 	adc_calibration_enable(ADC1);
 }
 
+/**
+ * @brief Anti-interference for the analog voltage 
+ * 
+ * @param ADC_Value : analog voltage value
+ * @param _adc_kalman_ : structure for the kalman filter
+ * @return uint16_t : analog voltage after filtering
+ */
 uint16_t ADC_Kalman_Filter(unsigned long ADC_Value, _adc_kalman_filter_t_ *_adc_kalman_)
 {
 		float x_k1_k1,x_k_k1;
@@ -77,16 +78,4 @@ uint16_t ADC_Kalman_Filter(unsigned long ADC_Value, _adc_kalman_filter_t_ *_adc_
     _adc_kalman_->ADC_OLD_Value = ADC_Value;
     _adc_kalman_->kalman_adc_old = kalman_adc;
 	return kalman_adc;
-}
-
-uint16_t BTS_ADC_Read(void)
-{
-	uint16_t adc_value;
-	adc_flag_clear(ADC1, ADC_FLAG_EOC);
-	while(SET != adc_flag_get(ADC1, ADC_FLAG_EOC)){
-	}
-	adc_value = ADC_RDATA(ADC1);        
-	BTS_Sys_Debug("6B: %d\r\n", adc_value);
-	BTS_Sys_Debug("\r\n ***********************************\r\n");
-	return 0;
 }

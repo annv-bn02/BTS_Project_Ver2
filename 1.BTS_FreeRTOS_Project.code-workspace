@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "2.UnitTest"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdint.h": "c",
+			"bts_frame_message.h": "c",
+			"stdio.h": "c",
+			"typeinfo": "c"
+		}
+	}
+}

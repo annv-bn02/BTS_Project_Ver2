@@ -106,7 +106,7 @@ void BTS_Get_Message(uint8_t datain, uint8_t arr_message[])
 }
 
 /**
- * @brief Used to reset element's when get message successfully or timeout.
+ * @brief Used to reset elements when get message successfully or timeout.
  * 
  */
 void ClearState(void)

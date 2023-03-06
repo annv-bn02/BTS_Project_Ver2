@@ -695,6 +695,12 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </component>
+      <component Cclass="Device" Cgroup="GD32F30x_StdPeripherals" Csub="DMA" Cvendor="GigaDevice" Cversion="2.1.0" condition="GD32F30x STDPERIPHERALS RCU">
+        <package name="GD32F30x_DFP" schemaVersion="1.1" url="http://gd32mcu.com/data/documents/pack/" vendor="GigaDevice" version="2.1.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
       <component Cclass="Device" Cgroup="GD32F30x_StdPeripherals" Csub="EXTI" Cvendor="GigaDevice" Cversion="2.1.0" condition="GD32F30x STDPERIPHERALS RCU">
         <package name="GD32F30x_DFP" schemaVersion="1.1" url="http://gd32mcu.com/data/documents/pack/" vendor="GigaDevice" version="2.1.0"/>
         <targetInfos>
@@ -748,6 +754,14 @@
       <file attr="config" category="source" name="Device\Firmware\Peripherals\src\gd32f30x_adc.c" version="2.1.0">
         <instance index="0">RTE\Device\GD32F303RC\gd32f30x_adc.c</instance>
         <component Cclass="Device" Cgroup="GD32F30x_StdPeripherals" Csub="ADC" Cvendor="GigaDevice" Cversion="2.1.0" condition="GD32F30x STDPERIPHERALS RCU"/>
+        <package name="GD32F30x_DFP" schemaVersion="1.1" url="http://gd32mcu.com/data/documents/pack/" vendor="GigaDevice" version="2.1.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\Firmware\Peripherals\src\gd32f30x_dma.c" version="2.1.0">
+        <instance index="0">RTE\Device\GD32F303RC\gd32f30x_dma.c</instance>
+        <component Cclass="Device" Cgroup="GD32F30x_StdPeripherals" Csub="DMA" Cvendor="GigaDevice" Cversion="2.1.0" condition="GD32F30x STDPERIPHERALS RCU"/>
         <package name="GD32F30x_DFP" schemaVersion="1.1" url="http://gd32mcu.com/data/documents/pack/" vendor="GigaDevice" version="2.1.0"/>
         <targetInfos>
           <targetInfo name="Target 1"/>

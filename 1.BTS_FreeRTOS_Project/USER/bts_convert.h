@@ -8,18 +8,30 @@
 #include<stdio.h>
 #include<stdint.h>
 
+/**
+ * @brief union convert float <-> uint8_t array
+ * 
+ */
 typedef union 
 {
 	float data_float;
 	uint8_t bytes[4];	
 } data_format_float_bytes;
 
+/**
+ * @brief union convert int <-> uint8_t array
+ * 
+ */
 typedef union 
 {
     uint32_t data_int;
     uint8_t bytes[4];
 } data_format_int_bytes;
 
+/**
+ * @brief union convert uint16_t <-> uint8_t array
+ * 
+ */
 typedef union 
 {
     uint16_t data_uint16;
