@@ -68,7 +68,6 @@ extern volatile queueListValue_t QueueTask;
 #define DEBUG_TASK_MSG_CREATE_MESSAGE_SENSOR 0
 #define DEBUG_ERROR 0
 
-#define DATA_UNCONNECT_DEVICE 0;
 
 void BTS_Sys_EventInit(void);
 void BTS_Sys_Init(void);

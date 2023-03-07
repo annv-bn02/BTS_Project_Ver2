@@ -97,7 +97,7 @@ static void SendQueueDevice_IoToUart(void)
 	updateDeviceFrame_t frame_update_device;
 	for(count = SIZE_LIST_DEVICE; count < DEFAULT_MAX_NUMBER_DEVICE; count++)
 	{
-		array_data_device[count] = DATA_UNCONNECT_DEVICE;
+		array_data_device[count] = 0;
 	}
 	
 	for(count = 0; count < DEFAULT_MAX_NUMBER_DEVICE; count++)
@@ -121,7 +121,7 @@ static void SendQueueSensor_IoToUart(void)
 
 	for(count = 0; count < DEFAULT_MAX_NUMBER_SENSOR; count++)
 	{
-		array_data_sensor[count] = DATA_UNCONNECT_DEVICE;
+		array_data_sensor[count] = 25.5 + count;
 	}
 	
 	array_data_sensor[SENSOR_NTC1]  = temperature_NTC1;

@@ -11,10 +11,10 @@
 
 #define RETRUN_ERROR -1
 
-/* Byte bắt đầu (mặc định) */
+/* Byte b?t d?u (m?c d?nh) */
 #define START_BYTE 0xAA55
 
-/* Độ dài mặc định không đổi [Start(2byte) + TypeMessage(2byte) + Length(2byte) = 6byte] */
+/* �? d�i m?c d?nh kh�ng d?i [Start(2byte) + TypeMessage(2byte) + Length(2byte) = 6byte] */
 #define DEFAULT_BYTE                            6 
 
 
@@ -86,3 +86,4 @@ int16_t BTS_Frame_Control_Device(uint8_t name, uint8_t value, uint8_t *dataout);
 #endif
 
 #endif 
+
