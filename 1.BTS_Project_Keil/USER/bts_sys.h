@@ -59,7 +59,7 @@ extern volatile queueListValue_t QueueTask;
 #define TIME_WAIT_QUEUE			(portTickType)0
 
 #define COUNTER_UPDATE_DATA 		5000 	
-#define COUNTER_SMOKE_WARNING 		100 	
+#define COUNTER_SMOKE_WARNING 		20 	
 #define COUNTER_TIMEOUT 	20 	
 
 #define DEBUG_ALL 0

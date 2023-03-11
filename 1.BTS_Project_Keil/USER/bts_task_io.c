@@ -43,8 +43,9 @@ static void GetQueue_UartToIo(void)
 	{
 		if(data_frame.name <= SIZE_LIST_DEVICE && data_frame.name > 0)
 		{
-#if DEBUG_ALL
 			BTS_Sys_Debug("Name : %d - Value : %d\n",data_frame.name, data_frame.value);
+#if DEBUG_ALL
+			
 #endif
 			if(data_frame.value != 0)
 			{
@@ -93,13 +94,15 @@ static void SendEventControl_IoToSys(void)
 static void SendQueueDevice_IoToUart(void)
 {
 	uint8_t count = 0;
-	uint8_t array_data_device[DEFAULT_MAX_NUMBER_DEVICE];
 	updateDeviceFrame_t frame_update_device;
 	for(count = SIZE_LIST_DEVICE; count < DEFAULT_MAX_NUMBER_DEVICE; count++)
 	{
 		array_data_device[count] = 0;
 	}
+	BTS_Sys_Debug("%d %d %d\n", array_data_device[DEVICE_CONDITIONER], array_data_device[DEVICE_FAN], array_data_device[DEVICE_LAMP]);
+#if DEBUG_ALL
 	
+#endif
 	for(count = 0; count < DEFAULT_MAX_NUMBER_DEVICE; count++)
 	{
 		frame_update_device.data[count] = array_data_device[count];
@@ -127,7 +130,11 @@ static void SendQueueSensor_IoToUart(void)
 	array_data_sensor[SENSOR_NTC1]  = temperature_NTC1;
 	array_data_sensor[SENSOR_NTC2]  = temperature_NTC2;
 	array_data_sensor[SENSOR_SMOKE] = smoke_flag;
+	BTS_Sys_Debug("%d %d %d\n", (int)(array_data_sensor[SENSOR_NTC1] * 100), (int)(array_data_sensor[SENSOR_NTC2] * 100), (int)array_data_sensor[SENSOR_SMOKE]);
+#if DEBUG_ALL
 	
+#endif
+	smoke_flag = 0;
 	for(count = 0; count < DEFAULT_MAX_NUMBER_SENSOR; count++)
 	{
 		frame_update_sensor.data[count] = array_data_sensor[count];

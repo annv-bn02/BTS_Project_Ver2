@@ -38,7 +38,7 @@ OF SUCH DAMAGE.
 
 #include "gd32f30x.h"
 #include "systick.h"
-
+#include "bts_modbus.h"
 volatile static uint32_t delay;
 void SysTick_Handler(void);
 /*!
@@ -88,6 +88,26 @@ void delay_decrement(void)
 
 void SysTick_Handler(void)
 {
+	static uint8_t counter_callback_10ms = 0;
 	delay_decrement();
+	if(count_modbus == 1)
+	{
+		if(counter_callback_10ms < 100)
+		{
+			//count_modbus++;
+			counter_callback_10ms++;
+		}
+		else
+		{
+			counter_callback_10ms = 0;
+			//count_modbus++;
+			MBRTUMasterTimerISRCallback(&MBRTUHandle);
+		}
+	}
+	else
+	{
+		counter_callback_10ms = 0;
+	}
+
 } 
 

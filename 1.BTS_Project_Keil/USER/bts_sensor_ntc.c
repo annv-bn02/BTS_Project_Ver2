@@ -29,14 +29,14 @@ void Sensor_NTC_Get(void)
 	
 	adc_kalman = ADC_Kalman_Filter(ADC_IDATA1(ADC1), &Kalman_NTC2);
 	temperature_NTC2 = convert_NTC_Analog_to_Temperature(adc_kalman);
+	
+#if DEBUG_ALL
 	if(counter_NTC == 10000)
 	{
 		counter_NTC = 0;
 		BTS_Sys_Debug("NTC 1: %d C\r\n", (int)(temperature_NTC1 * 100));
 		BTS_Sys_Debug("NTC 2: %d C\r\n\n", (int)(temperature_NTC2 * 100));
 	}
-#if DEBUG_ALL
-	
 	BTS_Sys_Debug("\r\n ***********************************\r\n");
 #endif
 

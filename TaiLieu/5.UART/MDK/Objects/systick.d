@@ -17,3 +17,6 @@
 .\objects\systick.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h
 .\objects\systick.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h
 .\objects\systick.o: ..\USER\systick.h
+.\objects\systick.o: ..\USER\bts_modbus.h
+.\objects\systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

@@ -18,3 +18,6 @@
 .\objects\bts_uart.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h
 .\objects\bts_uart.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h
 .\objects\bts_uart.o: C:\Users\nvan0\AppData\Local\Arm\Packs\GigaDevice\GD32F30x_DFP\2.1.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h
+.\objects\bts_uart.o: ..\USER\bts_uart3.h
+.\objects\bts_uart.o: ..\USER\bts_modbus.h
+.\objects\bts_uart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
